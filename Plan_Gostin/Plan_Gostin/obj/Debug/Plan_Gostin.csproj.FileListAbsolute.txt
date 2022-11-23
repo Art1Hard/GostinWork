@@ -12,3 +12,17 @@ D:\Курсовая(4 курс)\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.pd
 D:\Курсовая(4 курс)\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Avtorization.resources
 D:\Курсовая(4 курс)\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.AdminPanel.resources
 D:\Курсовая(4 курс)\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Ralation.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\bin\Debug\Plan_Gostin.exe.config
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\bin\Debug\Plan_Gostin.exe
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\bin\Debug\Plan_Gostin.pdb
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.AssemblyReference.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.SuggestedBindingRedirects.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.AdminPanel.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Avtorization.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Main.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Properties.Resources.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Ralation.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.GenerateResource.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.CoreCompileInputs.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.exe
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.pdb

@@ -53,6 +53,7 @@ namespace Plan_Gostin
             if (table.Rows.Count == 1) // --- если строка таблицы равна 1
             {
                 MessageBox.Show("Вы успешно вошли!", "Успешно!!!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                Help.isAdmin = true;
                 AdminPanel ap = new AdminPanel();
                 ap.Show();
                 this.Hide();

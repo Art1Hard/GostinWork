@@ -26,3 +26,4 @@ D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.GenerateRe
 D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.CoreCompileInputs.cache
 D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.exe
 D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.pdb
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.PreviewDB.resources

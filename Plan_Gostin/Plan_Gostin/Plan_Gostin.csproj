@@ -64,11 +64,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GostinDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewDB.Designer.cs">
+      <DependentUpon>PreviewDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewDB.resx">
+      <DependentUpon>PreviewDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -206,6 +206,7 @@
             this.buttonReservation.TabIndex = 3;
             this.buttonReservation.Text = "Просмотр брони";
             this.buttonReservation.UseVisualStyleBackColor = true;
+            this.buttonReservation.Click += new System.EventHandler(this.buttonReservation_Click);
             // 
             // label1
             // 
@@ -295,6 +296,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Главная";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.groupBoxTitle.ResumeLayout(false);
             this.groupBoxTitle.PerformLayout();
             this.groupBoxAvtorization.ResumeLayout(false);

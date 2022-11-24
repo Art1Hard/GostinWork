@@ -199,6 +199,7 @@
             this.buttonReservation.TabIndex = 3;
             this.buttonReservation.Text = "Просмотр брони";
             this.buttonReservation.UseVisualStyleBackColor = true;
+            this.buttonReservation.Click += new System.EventHandler(this.buttonReservation_Click);
             // 
             // label1
             // 

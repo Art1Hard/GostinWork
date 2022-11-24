@@ -45,5 +45,17 @@ namespace Plan_Gostin
         {
 
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReservation_Click(object sender, EventArgs e)
+        {
+            PreviewDB prev = new PreviewDB();
+            prev.Show();
+            this.Hide();
+        }
     }
 }

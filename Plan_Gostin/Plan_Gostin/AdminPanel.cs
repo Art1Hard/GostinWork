@@ -25,6 +25,7 @@ namespace Plan_Gostin
         private void выходИзАккаунтаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Main main = new Main();
+            Help.isAdmin = false;
             main.Show();
             this.Hide();
         }
@@ -32,6 +33,13 @@ namespace Plan_Gostin
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonReservation_Click(object sender, EventArgs e)
+        {
+            PreviewDB prev = new PreviewDB();
+            prev.Show();
+            this.Hide();
         }
     }
 }

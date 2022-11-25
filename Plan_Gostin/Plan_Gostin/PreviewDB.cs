@@ -34,6 +34,7 @@ namespace Plan_Gostin
 
         private void CreateColumns() // создание колонок в таблице
         {
+            // добавление колонок
             dataGridView1.Columns.Add("id", "id");
             dataGridView1.Columns.Add("Gost_Room", "Номер");
             dataGridView1.Columns.Add("Gost_Status", "Статус");
@@ -41,14 +42,31 @@ namespace Plan_Gostin
             dataGridView1.Columns.Add("Okonchanie", "Окончание");
             dataGridView1.Columns.Add("Price", "Цена");
             dataGridView1.Columns.Add("isNew", string.Empty);
+        }
 
+        private void WidthColumns() // метод изменения ширины столбцов
+        {
+            // изменение ширины столбцов
             dataGridView1.Columns[3].Width = 200;
+        }
 
-            dataGridView1.Columns[0].Visible = false;
+        private void DataGridViewWidth() // изменение ширины dgw
+        {
+            if(!Help.isAdmin) // если мы не вошли то,
+                dataGridView1.Width = 650;
+        }
+
+        private void VisibleColumns() // метод скрытия ненужных столбцов
+        {
+            // скрытие ненужных столбцов
+            if(!Help.isAdmin) // если вы не вошли, то скрываются id номеров
+            {
+                dataGridView1.Columns[0].Visible = false;
+            }
             dataGridView1.Columns[6].Visible = false;
         }
 
-        private void ReadSingRow(DataGridView dgw, IDataRecord record)
+        private void ReadSingRow(DataGridView dgw, IDataRecord record) // чтение из БД-таблицы информацию и заносим эти строки в DataGridView
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetString(2), record.GetString(3), record.GetDateTime(4).ToShortDateString(), record.GetInt32(5), RowState.ModifiedNew);
         }
@@ -75,7 +93,7 @@ namespace Plan_Gostin
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Help.isAdmin)
+            if (Help.isAdmin) // если мы администратор мы переходим на форму для
             {
                 AdminPanel adm = new AdminPanel();
                 adm.Show();
@@ -91,9 +109,11 @@ namespace Plan_Gostin
 
         private void PreviewDB_Load(object sender, EventArgs e)
         {
-            CreateColumns();
-            RefreshDataGrid(dataGridView1);
-
+            CreateColumns(); // Вызываем метод создания колонок
+            WidthColumns(); // Вызываем метод изменения ширины колонок
+            VisibleColumns(); // Вызываем метод скрытия ненужных колонок
+            RefreshDataGrid(dataGridView1); // Вызываем метод обновления dgw
+            DataGridViewWidth(); // Вызываем метод изменения ширины dgw
         }
     }
 }

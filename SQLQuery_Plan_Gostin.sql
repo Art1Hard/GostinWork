@@ -35,5 +35,3 @@ INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
 VALUES (200,'Занят', 'Бесплатные закуски', '01/23/2023', 1999);
 
 SELECT * FROM ROOMS
-
-DROP TABLE ROOMS;

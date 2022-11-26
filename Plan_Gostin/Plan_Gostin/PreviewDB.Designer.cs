@@ -34,16 +34,23 @@
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.filterGroupBox = new System.Windows.Forms.GroupBox();
-            this.filterTextBox = new System.Windows.Forms.TextBox();
-            this.viborComboBox = new System.Windows.Forms.ComboBox();
-            this.bigRadioButton = new System.Windows.Forms.RadioButton();
-            this.littleRadioButton = new System.Windows.Forms.RadioButton();
-            this.viborButton = new System.Windows.Forms.Button();
-            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.filterButton = new System.Windows.Forms.Button();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
+            this.viborButton = new System.Windows.Forms.Button();
+            this.littleRadioButton = new System.Windows.Forms.RadioButton();
+            this.bigRadioButton = new System.Windows.Forms.RadioButton();
+            this.viborComboBox = new System.Windows.Forms.ComboBox();
+            this.filterTextBox = new System.Windows.Forms.TextBox();
+            this.sortGroupBox = new System.Windows.Forms.GroupBox();
+            this.sortButton = new System.Windows.Forms.Button();
+            this.viborSortButton = new System.Windows.Forms.Button();
+            this.ubivRadioButton = new System.Windows.Forms.RadioButton();
+            this.vozrastRadioButton = new System.Windows.Forms.RadioButton();
+            this.sortComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.filterGroupBox.SuspendLayout();
+            this.sortGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,14 +115,58 @@
             this.filterGroupBox.TabStop = false;
             this.filterGroupBox.Text = "Фильтрация";
             // 
-            // filterTextBox
+            // filterButton
             // 
-            this.filterTextBox.Location = new System.Drawing.Point(6, 101);
-            this.filterTextBox.Multiline = true;
-            this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(209, 55);
-            this.filterTextBox.TabIndex = 2;
-            this.filterTextBox.TextChanged += new System.EventHandler(this.filterTextBox_TextChanged);
+            this.filterButton.Location = new System.Drawing.Point(6, 136);
+            this.filterButton.Name = "filterButton";
+            this.filterButton.Size = new System.Drawing.Size(307, 34);
+            this.filterButton.TabIndex = 8;
+            this.filterButton.Text = "Фильтровать";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            // 
+            // statusComboBox
+            // 
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "1. Занят",
+            "2. Свободен"});
+            this.statusComboBox.Location = new System.Drawing.Point(6, 102);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(307, 24);
+            this.statusComboBox.TabIndex = 7;
+            // 
+            // viborButton
+            // 
+            this.viborButton.Location = new System.Drawing.Point(6, 61);
+            this.viborButton.Name = "viborButton";
+            this.viborButton.Size = new System.Drawing.Size(307, 34);
+            this.viborButton.TabIndex = 6;
+            this.viborButton.Text = "Выбрать";
+            this.viborButton.UseVisualStyleBackColor = true;
+            this.viborButton.Click += new System.EventHandler(this.viborButton_Click);
+            // 
+            // littleRadioButton
+            // 
+            this.littleRadioButton.AutoSize = true;
+            this.littleRadioButton.Location = new System.Drawing.Point(221, 136);
+            this.littleRadioButton.Name = "littleRadioButton";
+            this.littleRadioButton.Size = new System.Drawing.Size(79, 20);
+            this.littleRadioButton.TabIndex = 5;
+            this.littleRadioButton.TabStop = true;
+            this.littleRadioButton.Text = "Меньше";
+            this.littleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // bigRadioButton
+            // 
+            this.bigRadioButton.AutoSize = true;
+            this.bigRadioButton.Location = new System.Drawing.Point(221, 102);
+            this.bigRadioButton.Name = "bigRadioButton";
+            this.bigRadioButton.Size = new System.Drawing.Size(77, 20);
+            this.bigRadioButton.TabIndex = 4;
+            this.bigRadioButton.TabStop = true;
+            this.bigRadioButton.Text = "Больше";
+            this.bigRadioButton.UseVisualStyleBackColor = true;
             // 
             // viborComboBox
             // 
@@ -131,64 +182,91 @@
             this.viborComboBox.Size = new System.Drawing.Size(307, 24);
             this.viborComboBox.TabIndex = 3;
             // 
-            // bigRadioButton
+            // filterTextBox
             // 
-            this.bigRadioButton.AutoSize = true;
-            this.bigRadioButton.Location = new System.Drawing.Point(221, 102);
-            this.bigRadioButton.Name = "bigRadioButton";
-            this.bigRadioButton.Size = new System.Drawing.Size(77, 20);
-            this.bigRadioButton.TabIndex = 4;
-            this.bigRadioButton.TabStop = true;
-            this.bigRadioButton.Text = "Больше";
-            this.bigRadioButton.UseVisualStyleBackColor = true;
+            this.filterTextBox.Location = new System.Drawing.Point(6, 101);
+            this.filterTextBox.Multiline = true;
+            this.filterTextBox.Name = "filterTextBox";
+            this.filterTextBox.Size = new System.Drawing.Size(209, 55);
+            this.filterTextBox.TabIndex = 2;
+            this.filterTextBox.TextChanged += new System.EventHandler(this.filterTextBox_TextChanged);
             // 
-            // littleRadioButton
+            // sortGroupBox
             // 
-            this.littleRadioButton.AutoSize = true;
-            this.littleRadioButton.Location = new System.Drawing.Point(221, 136);
-            this.littleRadioButton.Name = "littleRadioButton";
-            this.littleRadioButton.Size = new System.Drawing.Size(79, 20);
-            this.littleRadioButton.TabIndex = 5;
-            this.littleRadioButton.TabStop = true;
-            this.littleRadioButton.Text = "Меньше";
-            this.littleRadioButton.UseVisualStyleBackColor = true;
+            this.sortGroupBox.Controls.Add(this.sortButton);
+            this.sortGroupBox.Controls.Add(this.viborSortButton);
+            this.sortGroupBox.Controls.Add(this.ubivRadioButton);
+            this.sortGroupBox.Controls.Add(this.vozrastRadioButton);
+            this.sortGroupBox.Controls.Add(this.sortComboBox);
+            this.sortGroupBox.Location = new System.Drawing.Point(524, 428);
+            this.sortGroupBox.Name = "sortGroupBox";
+            this.sortGroupBox.Size = new System.Drawing.Size(319, 180);
+            this.sortGroupBox.TabIndex = 9;
+            this.sortGroupBox.TabStop = false;
+            this.sortGroupBox.Text = "Сортировка";
             // 
-            // viborButton
+            // sortButton
             // 
-            this.viborButton.Location = new System.Drawing.Point(6, 61);
-            this.viborButton.Name = "viborButton";
-            this.viborButton.Size = new System.Drawing.Size(307, 34);
-            this.viborButton.TabIndex = 6;
-            this.viborButton.Text = "Выбрать";
-            this.viborButton.UseVisualStyleBackColor = true;
-            this.viborButton.Click += new System.EventHandler(this.viborButton_Click);
+            this.sortButton.Location = new System.Drawing.Point(6, 136);
+            this.sortButton.Name = "sortButton";
+            this.sortButton.Size = new System.Drawing.Size(307, 34);
+            this.sortButton.TabIndex = 8;
+            this.sortButton.Text = "Сортировать";
+            this.sortButton.UseVisualStyleBackColor = true;
+            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
             // 
-            // statusComboBox
+            // viborSortButton
             // 
-            this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Items.AddRange(new object[] {
-            "1. Занят",
-            "2. Свободен"});
-            this.statusComboBox.Location = new System.Drawing.Point(6, 102);
-            this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(307, 24);
-            this.statusComboBox.TabIndex = 7;
+            this.viborSortButton.Location = new System.Drawing.Point(6, 61);
+            this.viborSortButton.Name = "viborSortButton";
+            this.viborSortButton.Size = new System.Drawing.Size(307, 34);
+            this.viborSortButton.TabIndex = 6;
+            this.viborSortButton.Text = "Выбрать";
+            this.viborSortButton.UseVisualStyleBackColor = true;
+            this.viborSortButton.Click += new System.EventHandler(this.viborSortButton_Click);
             // 
-            // filterButton
+            // ubivRadioButton
             // 
-            this.filterButton.Location = new System.Drawing.Point(6, 136);
-            this.filterButton.Name = "filterButton";
-            this.filterButton.Size = new System.Drawing.Size(307, 34);
-            this.filterButton.TabIndex = 8;
-            this.filterButton.Text = "Фильтровать";
-            this.filterButton.UseVisualStyleBackColor = true;
-            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            this.ubivRadioButton.AutoSize = true;
+            this.ubivRadioButton.Location = new System.Drawing.Point(197, 106);
+            this.ubivRadioButton.Name = "ubivRadioButton";
+            this.ubivRadioButton.Size = new System.Drawing.Size(116, 20);
+            this.ubivRadioButton.TabIndex = 5;
+            this.ubivRadioButton.TabStop = true;
+            this.ubivRadioButton.Text = "По убыванию";
+            this.ubivRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // vozrastRadioButton
+            // 
+            this.vozrastRadioButton.AutoSize = true;
+            this.vozrastRadioButton.Location = new System.Drawing.Point(6, 106);
+            this.vozrastRadioButton.Name = "vozrastRadioButton";
+            this.vozrastRadioButton.Size = new System.Drawing.Size(137, 20);
+            this.vozrastRadioButton.TabIndex = 4;
+            this.vozrastRadioButton.TabStop = true;
+            this.vozrastRadioButton.Text = "По возрастанию";
+            this.vozrastRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // sortComboBox
+            // 
+            this.sortComboBox.FormattingEnabled = true;
+            this.sortComboBox.Items.AddRange(new object[] {
+            "1. Номер",
+            "2. Статус",
+            "3. Доп. Услуги",
+            "4. Окончание",
+            "5. Цена"});
+            this.sortComboBox.Location = new System.Drawing.Point(6, 30);
+            this.sortComboBox.Name = "sortComboBox";
+            this.sortComboBox.Size = new System.Drawing.Size(307, 24);
+            this.sortComboBox.TabIndex = 3;
             // 
             // PreviewDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 646);
+            this.ClientSize = new System.Drawing.Size(1016, 617);
+            this.Controls.Add(this.sortGroupBox);
             this.Controls.Add(this.filterGroupBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -202,6 +280,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.filterGroupBox.ResumeLayout(false);
             this.filterGroupBox.PerformLayout();
+            this.sortGroupBox.ResumeLayout(false);
+            this.sortGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +302,11 @@
         private System.Windows.Forms.Button viborButton;
         private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.Button filterButton;
+        private System.Windows.Forms.GroupBox sortGroupBox;
+        private System.Windows.Forms.Button sortButton;
+        private System.Windows.Forms.Button viborSortButton;
+        private System.Windows.Forms.RadioButton ubivRadioButton;
+        private System.Windows.Forms.RadioButton vozrastRadioButton;
+        private System.Windows.Forms.ComboBox sortComboBox;
     }
 }

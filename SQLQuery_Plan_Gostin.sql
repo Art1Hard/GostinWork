@@ -22,7 +22,7 @@ SELECT * from ADMINS
 CREATE TABLE ROOMS
 (
 	ID INT IDENTITY(1,1) PRIMARY KEY,
-    Gost_ROOM INTEGER,
+    Gost_ROOM INTEGER UNIQUE,
     Gost_Status NVARCHAR(40),
     Dop_uslugi NVARCHAR(20),
     Okonchanie date,
@@ -33,5 +33,14 @@ INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
 VALUES (100,'Свободен', 'Нет', '01/01/2000', 500);
 INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
 VALUES (200,'Занят', 'Бесплатные закуски', '01/23/2023', 1999);
+INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
+VALUES (125,'Свободен', 'Нет', '11/16/2024', 300);
+INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
+VALUES (130,'Свободен', 'Бесплатные закуски', '09/20/2023', 1500);
+
+DROP TABLE ROOMS;
 
 SELECT * FROM ROOMS
+
+Select * from ROOMS order by Dop_uslugi DESC
+Select * from ROOMS order by Dop_uslugi

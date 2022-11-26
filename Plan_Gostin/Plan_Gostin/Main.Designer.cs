@@ -293,10 +293,12 @@
             this.Controls.Add(this.groupBoxAvtorization);
             this.Controls.Add(this.groupBoxTitle);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "Главная";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.groupBoxTitle.ResumeLayout(false);
             this.groupBoxTitle.PerformLayout();
             this.groupBoxAvtorization.ResumeLayout(false);

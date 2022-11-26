@@ -95,6 +95,7 @@
             this.Controls.Add(this.groupBoxAvtorization);
             this.Name = "Ralation";
             this.Text = "Связь";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ralation_KeyDown);
             this.groupBoxAvtorization.ResumeLayout(false);
             this.groupBoxAvtorization.PerformLayout();
             this.ResumeLayout(false);

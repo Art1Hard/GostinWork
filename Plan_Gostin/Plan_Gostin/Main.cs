@@ -57,5 +57,13 @@ namespace Plan_Gostin
             prev.Show();
             this.Hide();
         }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

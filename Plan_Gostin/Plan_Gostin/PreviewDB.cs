@@ -30,6 +30,16 @@ namespace Plan_Gostin
         {
             StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
+
+            VisibleElementFilter();
+            bigRadioButton.Checked = true;
+
+            KeyPreview = true;
+
+            if(!Help.isAdmin)
+            {
+                Width = 685;
+            }
         }
 
         private void CreateColumns() // создание колонок в таблице
@@ -114,6 +124,242 @@ namespace Plan_Gostin
             VisibleColumns(); // Вызываем метод скрытия ненужных колонок
             RefreshDataGrid(dataGridView1); // Вызываем метод обновления dgw
             DataGridViewWidth(); // Вызываем метод изменения ширины dgw
+        }
+
+        private void PreviewDB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                назадToolStripMenuItem_Click(назадToolStripMenuItem, null);
+            }
+            
+            if(e.KeyCode == Keys.R)
+            {
+                обновитьТаблицуToolStripMenuItem_Click(обновитьТаблицуToolStripMenuItem, null);
+            }
+        }
+
+        private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(dataGridView1);
+        }
+
+        private void VisibleElementFilter() // при инициализации скрываем элементы
+        {
+            filterTextBox.Visible = false;
+            bigRadioButton.Visible = false;
+            littleRadioButton.Visible = false;
+            statusComboBox.Visible = false;
+            filterButton.Visible = false;
+        }
+        private void FilterROOM(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string filterString = string.Format("Select * from ROOMS where Gost_ROOM like '%" + filterTextBox.Text + "%'");
+
+            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = com.ExecuteReader();
+
+            while(reader.Read())
+            {
+                ReadSingRow(dgw, reader);
+            }
+
+            reader.Close();
+        }
+
+        private void FilterEnd(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string filterString = string.Format("Select * from ROOMS where Okonchanie like '%" + filterTextBox.Text + "%'");
+
+            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = com.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSingRow(dgw, reader);
+            }
+
+            reader.Close();
+        }
+
+        private void FilterDop(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            string filterString = string.Format("Select * from ROOMS where Dop_uslugi like '%" + filterTextBox.Text + "%'");
+
+            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = com.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSingRow(dgw, reader);
+            }
+
+            reader.Close();
+        }
+
+        private void FilterPrice(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+
+            try
+            {
+                int value = Convert.ToInt32(filterTextBox.Text);
+                string filterString ="";
+
+                if(bigRadioButton.Checked)
+                {
+                    filterString = string.Format("Select * from ROOMS where Price >= " + value + "order by Price");
+                }
+                if(littleRadioButton.Checked)
+                {
+                    filterString = string.Format("Select * from ROOMS where Price <= " + value + "order by Price");
+                }
+
+
+
+                SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
+
+                dataBase.openConnection();
+
+                SqlDataReader reader = com.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ReadSingRow(dgw, reader);
+                }
+
+                reader.Close();
+            }
+            catch
+            {
+                filterTextBox.Text = "";
+            }
+        }
+
+        private string vibor; 
+
+        private void filterTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if(vibor == "Цена")
+            {
+                FilterPrice(dataGridView1);
+            }
+            if(vibor == "Номер")
+                FilterROOM(dataGridView1);
+            if (vibor == "Окончание")
+                FilterEnd(dataGridView1);
+            if (vibor == "Доп услуги")
+                FilterDop(dataGridView1);
+        }
+
+        private void FilterStatus(DataGridView dgw)
+        {
+            dataGridView1.Rows.Clear();
+            string status = "";
+
+            switch (statusComboBox.SelectedIndex)
+            {
+                case 0:
+                    status = "Занят";
+                    break;
+                case 1:
+                    status = "Свободен";
+                    break;
+            }
+
+            string filterString = string.Format("Select * from ROOMS where Gost_Status like '%" + status + "%'");
+
+            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
+
+            dataBase.openConnection();
+
+            SqlDataReader reader = com.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSingRow(dataGridView1, reader);
+            }
+
+            reader.Close();
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            FilterStatus(dataGridView1);
+        }
+
+        private void HelpVibor(int index)
+        {
+            if(index == 0)
+            {
+                statusComboBox.Visible = false;
+                filterButton.Visible = false;
+                filterTextBox.Visible = true;
+                bigRadioButton.Visible = true;
+                littleRadioButton.Visible = true;
+                bigRadioButton.Enabled = false;
+                littleRadioButton.Enabled = false;
+            }
+            if(index == 1)
+            {
+                statusComboBox.Visible = true;
+                filterButton.Visible = true;
+                filterTextBox.Visible = false;
+                bigRadioButton.Visible = false;
+                littleRadioButton.Visible = false;
+            }
+            if(index == 2)
+            {
+                statusComboBox.Visible = false;
+                filterButton.Visible = false;
+                filterTextBox.Visible = true;
+                bigRadioButton.Visible = true;
+                littleRadioButton.Visible = true;
+                bigRadioButton.Enabled = true;
+                littleRadioButton.Enabled = true;
+            }
+        }
+
+        private void viborButton_Click(object sender, EventArgs e)
+        {
+            switch(viborComboBox.SelectedIndex)
+            {
+                case 0:
+                    vibor = "Номер";
+                    HelpVibor(0);
+                    break;
+                case 1:
+                    HelpVibor(1);
+                    break;
+                case 2:
+                    vibor = "Доп услуги";
+                    HelpVibor(0);
+                    break;
+                case 3:
+                    vibor = "Окончание";
+                    HelpVibor(0);
+                    break;
+                case 4:
+                    vibor = "Цена";
+                    HelpVibor(2);
+                    break;
+                
+            }
         }
     }
 }

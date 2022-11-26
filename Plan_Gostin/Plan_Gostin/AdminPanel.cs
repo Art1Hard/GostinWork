@@ -16,6 +16,7 @@ namespace Plan_Gostin
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            KeyPreview = true;
         }
 
         private void AdminPanel_Load(object sender, EventArgs e)
@@ -40,6 +41,14 @@ namespace Plan_Gostin
             PreviewDB prev = new PreviewDB();
             prev.Show();
             this.Hide();
+        }
+
+        private void AdminPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                выходToolStripMenuItem_Click(выходToolStripMenuItem, null);
+            }
         }
     }
 }

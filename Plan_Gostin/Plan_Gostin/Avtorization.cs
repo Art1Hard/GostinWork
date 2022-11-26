@@ -71,5 +71,18 @@ namespace Plan_Gostin
             Main main = new Main();
             main.Show();
         }
+
+        private void Avtorization_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                buttonVoiti_Click(buttonVoiti, null);
+            }
+
+            if(e.KeyCode == Keys.Escape)
+            {
+                buttonNazad_Click(buttonNazad, null);
+            }
+        }
     }
 }

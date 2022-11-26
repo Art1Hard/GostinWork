@@ -16,6 +16,15 @@ namespace Plan_Gostin
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen; // --- Начальная позиция окна(центр)
+            KeyPreview = true;
+        }
+
+        private void Ralation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

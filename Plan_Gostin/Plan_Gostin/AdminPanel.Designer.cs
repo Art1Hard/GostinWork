@@ -244,6 +244,7 @@
             this.Name = "AdminPanel";
             this.Text = "Панель администратора";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminPanel_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBoxTitle.ResumeLayout(false);

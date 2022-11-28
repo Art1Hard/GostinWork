@@ -32,7 +32,7 @@ namespace Plan_Gostin
 
         private void войтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            avt.ShowDialog();
+            buttonAvtorization_Click(buttonAvtorization, null);
         }
 
         private void buttonRelation_Click(object sender, EventArgs e)

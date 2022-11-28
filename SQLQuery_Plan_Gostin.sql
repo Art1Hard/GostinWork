@@ -1,4 +1,5 @@
 CREATE DATABASE Gostin;
+use Gostin;
 
 CREATE TABLE ADMINS
 (
@@ -16,6 +17,8 @@ INSERT INTO ADMINS (Loggin, Pasword, FirtName, Email, Phone)
 VALUES ('VladDark','Vlad500', 'Vlad', 'vladislave@gmail.com', '+79967880450');
 INSERT INTO ADMINS (Loggin, Pasword, FirtName, Email, Phone)
 VALUES ('admin','admin', 'admin', 'admin@gmail.com', '+5215214421');
+INSERT INTO ADMINS (Loggin, Pasword, FirtName, Email, Phone)
+VALUES ('SweetCrime','88005553535', 'Alyona', 'lapa@gmail.com', '+78005553535');
 
 SELECT * from ADMINS
 

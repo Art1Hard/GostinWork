@@ -27,7 +27,6 @@ namespace Plan_Gostin
         int selectedRow;
 
         private string vibor; // переменная для помощи в "Выборе"
-        private string sortVibor; // переменная для помощи в "Выборе" сортировка
 
         public PreviewDB()
         {
@@ -83,7 +82,7 @@ namespace Plan_Gostin
             dataGridView1.Columns[6].Visible = false;
         }
 
-        private void ReadSingRow(DataGridView dgw, IDataRecord record) // чтение из БД-таблицы информацию и заносим эти строки в DataGridView
+        public static void ReadSingRow(DataGridView dgw, IDataRecord record) // чтение из БД-таблицы информацию и заносим эти строки в DataGridView
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetString(2), record.GetString(3), record.GetDateTime(4).ToShortDateString(), record.GetInt32(5), RowState.ModifiedNew);
         }
@@ -171,455 +170,77 @@ namespace Plan_Gostin
             sortButton.Enabled = false; // сортировка
         }
 
-        private void FilterROOM(DataGridView dgw) // фильтр "Номер"
-        {
-            dgw.Rows.Clear();
-
-            string filterString = string.Format("Select * from ROOMS where Gost_ROOM like '%" + filterTextBox.Text + "%'");
-
-            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-            dataBase.openConnection();
-
-            SqlDataReader reader = com.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ReadSingRow(dgw, reader);
-            }
-
-            reader.Close();
-        }
-
-        private void FilterStatus(DataGridView dgw) // фильтр "Статус"
-        {
-            dataGridView1.Rows.Clear();
-            string status = "";
-
-            switch (statusComboBox.SelectedIndex)
-            {
-                case 0:
-                    status = "Занят";
-                    break;
-                case 1:
-                    status = "Свободен";
-                    break;
-            }
-
-            string filterString = string.Format("Select * from ROOMS where Gost_Status like '%" + status + "%'");
-
-            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-            dataBase.openConnection();
-
-            SqlDataReader reader = com.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ReadSingRow(dataGridView1, reader);
-            }
-
-            reader.Close();
-        }
-
-        private void FilterDop(DataGridView dgw) // фильтр "Доп. Услуги"
-        {
-            dgw.Rows.Clear();
-
-            string filterString = string.Format("Select * from ROOMS where Dop_uslugi like '%" + filterTextBox.Text + "%'");
-
-            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-            dataBase.openConnection();
-
-            SqlDataReader reader = com.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ReadSingRow(dgw, reader);
-            }
-
-            reader.Close();
-        }
-
-        private void FilterPrice(DataGridView dgw) // фильтр "Цена"
-        {
-            dgw.Rows.Clear();
-
-            try
-            {
-                int value = Convert.ToInt32(filterTextBox.Text);
-                string filterString = "";
-
-                if (bigRadioButton.Checked)
-                {
-                    filterString = string.Format("Select * from ROOMS where Price >= " + value);
-                }
-                if (littleRadioButton.Checked)
-                {
-                    filterString = string.Format("Select * from ROOMS where Price <= " + value);
-                }
 
 
 
-                SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                dataBase.openConnection();
-
-                SqlDataReader reader = com.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    ReadSingRow(dgw, reader);
-                }
-
-                reader.Close();
-            }
-            catch
-            {
-                filterTextBox.Text = "";
-            }
-        }
-
-        private void FilterEnd(DataGridView dgw) // фильтр "Окончание"
-        {
-            dgw.Rows.Clear();
-
-            string filterString = string.Format("Select * from ROOMS where Okonchanie like '%" + filterTextBox.Text + "%'");
-
-            SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-            dataBase.openConnection();
-
-            SqlDataReader reader = com.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ReadSingRow(dgw, reader);
-            }
-
-            reader.Close();
-        }
 
 
+        string table = "ROOMS"; // переменная с таблицей Номеров
 
-        private void filterTextBox_TextChanged(object sender, EventArgs e)
+        private void filterTextBox_TextChanged(object sender, EventArgs e) // при смене текста
         {
             if (vibor == "Цена")
-            {
-                FilterPrice(dataGridView1);
-            }
+                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Price", bigRadioButton); // фильтрует по Цене
+
             if (vibor == "Номер")
-                FilterROOM(dataGridView1);
+                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Gost_ROOM"); // фильтрует по Номеру
+
             if (vibor == "Окончание")
-                FilterEnd(dataGridView1);
+                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Okonchanie"); // фильтрует по Дате
+
             if (vibor == "Доп услуги")
-                FilterDop(dataGridView1);
+                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Dop_Uslugi"); // фильтрует по Услугам
         }
 
-        private void filterButton_Click(object sender, EventArgs e)
+        private void filterButton_Click(object sender, EventArgs e) // при клике на кнопку
         {
-            FilterStatus(dataGridView1);
+            FilterDB.Filter_DB(dataGridView1, statusComboBox, table, "Gost_Status"); // фильтрует по Статусу
         }
 
-        private void HelpVibor(int index)
+        bool isFilter = false; // логическая переменна фильтр ли она
+        private bool VisibleElements(bool isFilter) // скрытие элементов при условии,
         {
-            if (index == 0)
+            if (isFilter) // если, нажата кнопка выбора фильтра то,
+                sortButton.Enabled = false;
+            else
             {
                 statusComboBox.Visible = false;
-                filterButton.Visible = false;
-                filterTextBox.Visible = true;
-                bigRadioButton.Visible = true;
-                littleRadioButton.Visible = true;
-                bigRadioButton.Enabled = false;
-                littleRadioButton.Enabled = false;
-            }
-            if (index == 1)
-            {
-                statusComboBox.Visible = true;
-                filterButton.Visible = true;
                 filterTextBox.Visible = false;
+                filterTextBox.Text = "";
+                filterButton.Visible = false;
                 bigRadioButton.Visible = false;
                 littleRadioButton.Visible = false;
             }
-            if (index == 2)
-            {
-                statusComboBox.Visible = false;
-                filterButton.Visible = false;
-                filterTextBox.Visible = true;
-                bigRadioButton.Visible = true;
-                littleRadioButton.Visible = true;
-                bigRadioButton.Enabled = true;
-                littleRadioButton.Enabled = true;
-            }
+
+            isFilter = false; // переменная возвращается в default состояние
+            return isFilter; // возвращаем состояние
         }
 
-        private void viborButton_Click(object sender, EventArgs e)
+        private void viborButton_Click(object sender, EventArgs e) // кнопка выбора фильтра
         {
-            switch (viborComboBox.SelectedIndex)
-            {
-                case 0:
-                    vibor = "Номер";
-                    HelpVibor(0);
-                    break;
-                case 1:
-                    HelpVibor(1);
-                    break;
-                case 2:
-                    vibor = "Доп услуги";
-                    HelpVibor(0);
-                    break;
-                case 3:
-                    vibor = "Окончание";
-                    HelpVibor(0);
-                    break;
-                case 4:
-                    vibor = "Цена";
-                    HelpVibor(2);
-                    break;
+            isFilter = true; // это есть фильтр
+            isFilter = VisibleElements(isFilter); // скрытие элементов сортировки
 
-            }
+            // в зависимости от выбора фильтра мы выбираем что скрыть/показать в окне фильтра, и присваиваем значение переменной vibor.
+            vibor = FilterDB.SelectFilter(viborComboBox, statusComboBox, filterButton, filterTextBox, bigRadioButton, littleRadioButton);
 
         }
 
-        private void viborSortButton_Click(object sender, EventArgs e)
+        private void viborSortButton_Click(object sender, EventArgs e) // кнопка выбора сортировки
         {
-            switch (sortComboBox.SelectedIndex)
-            {
-                case 0:
-                    sortVibor = "Номер";
-                    sortButton.Enabled = true;
-                    break;
-                case 1:
-                    sortVibor = "Статус";
-                    sortButton.Enabled = true;
-                    break;
-                case 2:
-                    sortVibor = "Доп услуги";
-                    sortButton.Enabled = true;
-                    break;
-                case 3:
-                    sortVibor = "Окончание";
-                    sortButton.Enabled = true;
-                    break;
-                case 4:
-                    sortVibor = "Цена";
-                    sortButton.Enabled = true;
-                    break;
-            }
+            VisibleElements(isFilter); // скрытие элементов фильтра
+
+            // в зависимости от выбора сортировки мы выбираем что скрыть/показать в окне сортировки, и присваиваем значение переменной vibor.
+            vibor = SortDB.SelectSort(sortComboBox, sortButton);
         }
 
         private void sortButton_Click(object sender, EventArgs e)
         {
-            if (sortVibor == "Номер")
-            {
-                if (vozrastRadioButton.Checked)
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Gost_ROOM");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-                else
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Gost_ROOM desc");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-            }
-
-            if (sortVibor == "Статус")
-            {
-                if (vozrastRadioButton.Checked)
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Gost_Status");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-                else
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Gost_Status desc");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-            }
-
-            if (sortVibor == "Доп услуги")
-            {
-                if (vozrastRadioButton.Checked)
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Dop_uslugi");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-                else
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Dop_uslugi DESC");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-            }
-
-            if (sortVibor == "Окончание")
-            {
-                if (vozrastRadioButton.Checked)
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Okonchanie");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-                else
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Okonchanie DESC");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-            }
-
-            if (sortVibor == "Цена")
-            {
-                if (vozrastRadioButton.Checked)
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Price");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-                else
-                {
-                    dataGridView1.Rows.Clear();
-
-                    string filterString = string.Format("Select * from ROOMS order by Price DESC");
-
-                    SqlCommand com = new SqlCommand(filterString, dataBase.getConnection());
-
-                    dataBase.openConnection();
-
-                    SqlDataReader reader = com.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        ReadSingRow(dataGridView1, reader);
-                    }
-
-                    reader.Close();
-                }
-            }
+            SortDB.SortDGW(vibor, "Номер", vozrastRadioButton, dataGridView1, "Gost_ROOM", table); // сортирует по Номеру
+            SortDB.SortDGW(vibor, "Статус", vozrastRadioButton, dataGridView1, "Gost_Status", table); // сортирует по Статусу
+            SortDB.SortDGW(vibor, "Доп услуги", vozrastRadioButton, dataGridView1, "Dop_uslugi", table); // сортирует по Услугам
+            SortDB.SortDGW(vibor, "Окончание", vozrastRadioButton, dataGridView1, "Okonchanie", table); // сортирует по Дате
+            SortDB.SortDGW(vibor, "Цена", vozrastRadioButton, dataGridView1, "Price", table); // сортирует по Цене
         }
     }
 }

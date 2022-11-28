@@ -59,6 +59,7 @@
       <DependentUpon>Avtorization.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="FilterDB.cs" />
     <Compile Include="GostinDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +86,7 @@
     <Compile Include="Ralation.Designer.cs">
       <DependentUpon>Ralation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SortDB.cs" />
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>

@@ -65,6 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GostinDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GostinDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GostinDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Help.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -121,6 +126,17 @@
     </None>
     <None Include="GostinDataSet.xss">
       <DependentUpon>GostinDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GostinDataSet1.xsc">
+      <DependentUpon>GostinDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="GostinDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GostinDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GostinDataSet1.xss">
+      <DependentUpon>GostinDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -35,11 +35,11 @@ CREATE TABLE ROOMS
 INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
 VALUES (100,'Свободен', 'Нет', '01/01/2000', 500);
 INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
-VALUES (200,'Занят', 'Бесплатные закуски', '01/23/2023', 1999);
+VALUES (200,'Занят', 'Бесплатные закуски', '23/01/2023', 1999);
 INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
-VALUES (125,'Свободен', 'Нет', '11/16/2024', 300);
+VALUES (125,'Свободен', 'Нет', '11/12/2024', 300);
 INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
-VALUES (130,'Свободен', 'Бесплатные закуски', '09/20/2023', 1500);
+VALUES (130,'Свободен', 'Бесплатные закуски', '09/09/2023', 1500);
 
 DROP TABLE ROOMS;
 

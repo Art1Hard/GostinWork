@@ -62,27 +62,27 @@
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1016, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1016, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // просмотрБазДанныхToolStripMenuItem
             // 
             this.просмотрБазДанныхToolStripMenuItem.Name = "просмотрБазДанныхToolStripMenuItem";
-            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.просмотрБазДанныхToolStripMenuItem.Text = "Просмотр баз данных";
             // 
             // обновитьТаблицуToolStripMenuItem
             // 
             this.обновитьТаблицуToolStripMenuItem.Name = "обновитьТаблицуToolStripMenuItem";
-            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.обновитьТаблицуToolStripMenuItem.Text = "Обновить таблицу";
             this.обновитьТаблицуToolStripMenuItem.Click += new System.EventHandler(this.обновитьТаблицуToolStripMenuItem_Click);
             // 
             // назадToolStripMenuItem
             // 
             this.назадToolStripMenuItem.Name = "назадToolStripMenuItem";
-            this.назадToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.назадToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
             // 
@@ -91,6 +91,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Location = new System.Drawing.Point(12, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;

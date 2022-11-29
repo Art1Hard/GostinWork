@@ -50,5 +50,12 @@ namespace Plan_Gostin
                 выходToolStripMenuItem_Click(выходToolStripMenuItem, null);
             }
         }
+
+        private void buttonBuy_Click(object sender, EventArgs e)
+        {
+            Reservation res = new Reservation();
+            res.Show();
+            Hide();
+        }
     }
 }

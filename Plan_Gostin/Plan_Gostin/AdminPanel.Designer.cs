@@ -146,6 +146,7 @@
             this.buttonBuy.TabIndex = 3;
             this.buttonBuy.Text = "Покупка номеров";
             this.buttonBuy.UseVisualStyleBackColor = true;
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // labelArrow1
             // 

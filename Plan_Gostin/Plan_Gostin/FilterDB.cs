@@ -93,7 +93,7 @@ namespace Plan_Gostin
 
             while (reader.Read())
             {
-                PreviewDB.ReadSingRow(dgw, reader);
+                Help.ReadSingRow(dgw, reader);
             }
 
             reader.Close();
@@ -122,7 +122,7 @@ namespace Plan_Gostin
 
                 while (reader.Read())
                 {
-                    PreviewDB.ReadSingRow(dgw, reader);
+                    Help.ReadSingRow(dgw, reader);
                 }
 
                 reader.Close();
@@ -164,7 +164,7 @@ namespace Plan_Gostin
 
             while (reader.Read())
             {
-                PreviewDB.ReadSingRow(dgw, reader);
+                Help.ReadSingRow(dgw, reader);
             }
 
             reader.Close();

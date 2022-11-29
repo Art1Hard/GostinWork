@@ -55,3 +55,4 @@ C:\Users\1529-19\Desktop\Gost_Work\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin
 C:\Users\1529-19\Desktop\Gost_Work\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.csproj.CoreCompileInputs.cache
 C:\Users\1529-19\Desktop\Gost_Work\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.exe
 C:\Users\1529-19\Desktop\Gost_Work\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.pdb
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Debug\Plan_Gostin.Reservation.resources

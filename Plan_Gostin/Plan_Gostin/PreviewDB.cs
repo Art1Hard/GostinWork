@@ -70,50 +70,12 @@ namespace Plan_Gostin
 
         private void PreviewDB_Load(object sender, EventArgs e)
         {
-            CreateColumns(); // Вызываем метод создания колонок
-            WidthColumns(); // Вызываем метод изменения ширины колонок
-            VisibleColumns(); // Вызываем метод скрытия ненужных колонок
+            Help.CreateColumns(dataGridView1); // Вызываем метод создания колонок
+            Help.WidthColumns(dataGridView1); // Вызываем метод изменения ширины колонок
+            Help.VisibleColumns(dataGridView1); // Вызываем метод скрытия ненужных колонок
             Help.RefreshDataGrid(dataGridView1); // Вызываем метод обновления dgw
             Help.SortDisabled(dataGridView1); // Отключаем сортировку dgw
-        }
-
-        private void VisibleColumns() // метод скрытия ненужных столбцов
-        {
-            // скрытие ненужных столбцов
-            if (!Help.isAdmin) // если вы не вошли, то скрываются id номеров
-            {
-                dataGridView1.Columns[0].Visible = false;
-            }
-            dataGridView1.Columns[6].Visible = false;
-        }
-
-        private void CreateColumns() // создание колонок в таблице
-        {
-            // добавление колонок
-            dataGridView1.Columns.Add("id", "id");
-            dataGridView1.Columns.Add("Gost_Room", "Номер");
-            dataGridView1.Columns.Add("Gost_Status", "Статус");
-            dataGridView1.Columns.Add("Dop_uslugi", "Доп. услуги");
-            dataGridView1.Columns.Add("Okonchanie", "Окончание");
-            dataGridView1.Columns.Add("Price", "Цена");
-            dataGridView1.Columns.Add("isNew", string.Empty);
-        }
-
-        private void WidthColumns() // метод изменения ширины столбцов
-        {
-            // изменение ширины столбцов
-            dataGridView1.Columns[3].Width = 200; // изменяется только четвертый столбец
-        }
-
-        public static void ReadSingRow(DataGridView dgw, IDataRecord record) // чтение из БД-таблицы информацию и заносим эти строки в DataGridView
-        {
-            dgw.Rows.Add(record.GetInt32(0), 
-            record.GetInt32(1),
-            record.GetString(2),
-            record.GetString(3),
-            record.GetDateTime(4).ToShortDateString(),
-            record.GetInt32(5),
-            RowState.ModifiedNew);
+            Help.VisibleHeaders(dataGridView1, false); // отключаем еще ненужные элементы
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace Plan_Gostin
             Help.RefreshDataGrid(dataGridView1);
             Help.VisibleColumns(dataGridView1);
             Help.SortDisabled(dataGridView1);
-            Help.VisibleHeaders(dataGridView1, false);
+            Help.VisibleHeaders(dataGridView1, true, false);
             Help.WidthColumns(dataGridView1);
         }
 

@@ -75,7 +75,7 @@ namespace Plan_Gostin
             Help.VisibleColumns(dataGridView1); // Вызываем метод скрытия ненужных колонок
             Help.RefreshDataGrid(dataGridView1); // Вызываем метод обновления dgw
             Help.SortDisabled(dataGridView1); // Отключаем сортировку dgw
-            Help.VisibleHeaders(dataGridView1, false); // отключаем еще ненужные элементы
+            Help.VisibleHeaders(dataGridView1, true, false); // отключаем еще ненужные элементы
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,21 +118,21 @@ namespace Plan_Gostin
         private void filterTextBox_TextChanged(object sender, EventArgs e) // при смене текста
         {
             if (vibor == "Цена")
-                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Price", bigRadioButton); // фильтрует по Цене
+                Help.Filter_DB(dataGridView1, filterTextBox, table, "Price", bigRadioButton); // фильтрует по Цене
 
             if (vibor == "Номер")
-                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Gost_ROOM"); // фильтрует по Номеру
+                Help.Filter_DB(dataGridView1, filterTextBox, table, "Gost_ROOM"); // фильтрует по Номеру
 
             if (vibor == "Окончание")
-                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Okonchanie"); // фильтрует по Дате
+                Help.Filter_DB(dataGridView1, filterTextBox, table, "Okonchanie"); // фильтрует по Дате
 
             if (vibor == "Доп услуги")
-                FilterDB.Filter_DB(dataGridView1, filterTextBox, table, "Dop_Uslugi"); // фильтрует по Услугам
+                Help.Filter_DB(dataGridView1, filterTextBox, table, "Dop_Uslugi"); // фильтрует по Услугам
         }
 
         private void filterButton_Click(object sender, EventArgs e) // при клике на кнопку
         {
-            FilterDB.Filter_DB(dataGridView1, statusComboBox, table, "Gost_Status"); // фильтрует по Статусу
+            Help.Filter_DB(dataGridView1, statusComboBox, table, "Gost_Status"); // фильтрует по Статусу
         }
 
         bool isFilter = false; // логическая переменна фильтр ли она
@@ -160,7 +160,7 @@ namespace Plan_Gostin
             isFilter = VisibleElements(isFilter); // скрытие элементов сортировки
 
             // в зависимости от выбора фильтра мы выбираем что скрыть/показать в окне фильтра, и присваиваем значение переменной vibor.
-            vibor = FilterDB.SelectFilter(viborComboBox, statusComboBox, filterButton, filterTextBox, bigRadioButton, littleRadioButton);
+            vibor = Help.SelectFilter(viborComboBox, statusComboBox, filterButton, filterTextBox, bigRadioButton, littleRadioButton);
 
         }
 
@@ -169,16 +169,16 @@ namespace Plan_Gostin
             VisibleElements(isFilter); // скрытие элементов фильтра
 
             // в зависимости от выбора сортировки мы выбираем что скрыть/показать в окне сортировки, и присваиваем значение переменной vibor.
-            vibor = SortDB.SelectSort(sortComboBox, sortButton);
+            vibor = Help.SelectSort(sortComboBox, sortButton);
         }
 
         private void sortButton_Click(object sender, EventArgs e) // кнопка сортировки
         {
-            SortDB.SortDGW(vibor, "Номер", vozrastRadioButton, dataGridView1, "Gost_ROOM", table); // сортирует по Номеру
-            SortDB.SortDGW(vibor, "Статус", vozrastRadioButton, dataGridView1, "Gost_Status", table); // сортирует по Статусу
-            SortDB.SortDGW(vibor, "Доп услуги", vozrastRadioButton, dataGridView1, "Dop_uslugi", table); // сортирует по Услугам
-            SortDB.SortDGW(vibor, "Окончание", vozrastRadioButton, dataGridView1, "Okonchanie", table); // сортирует по Дате
-            SortDB.SortDGW(vibor, "Цена", vozrastRadioButton, dataGridView1, "Price", table); // сортирует по Цене
+            Help.SortDGW(vibor, "Номер", vozrastRadioButton, dataGridView1, "Gost_ROOM", table); // сортирует по Номеру
+            Help.SortDGW(vibor, "Статус", vozrastRadioButton, dataGridView1, "Gost_Status", table); // сортирует по Статусу
+            Help.SortDGW(vibor, "Доп услуги", vozrastRadioButton, dataGridView1, "Dop_uslugi", table); // сортирует по Услугам
+            Help.SortDGW(vibor, "Окончание", vozrastRadioButton, dataGridView1, "Okonchanie", table); // сортирует по Дате
+            Help.SortDGW(vibor, "Цена", vozrastRadioButton, dataGridView1, "Price", table); // сортирует по Цене
         }
     }
 }

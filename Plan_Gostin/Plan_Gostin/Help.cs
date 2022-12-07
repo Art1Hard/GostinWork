@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient; // подключение базы данных SQL
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +11,15 @@ namespace Plan_Gostin
 {
     public static class Help
     {
+        public enum RowState // состояние данных в таблице
+        {
+            Existed,
+            New,
+            Modified,
+            ModifiedNew,
+            Deleted
+        }
+
         public static bool isAdmin = false; // проверка на администратора
 
         public static void SortDisabled(DataGridView dgw) // отключаем сортировку в dgw
@@ -84,7 +93,12 @@ namespace Plan_Gostin
         public static void WidthColumns(DataGridView dgw) // метод изменения ширины столбцов
         {
             // изменение ширины столбцов
-            dgw.Columns[3].Width = 200; // изменяется только четвертый столбец
+            dgw.Columns[0].Width = 40;
+            dgw.Columns[1].Width = 50;
+            dgw.Columns[2].Width = 70;
+            dgw.Columns[3].Width = 150;
+            dgw.Columns[4].Width = 70;
+            dgw.Columns[5].Width = 50;
         }
 
         public static string SelectSort(ComboBox sortComboBox, Button sortButton) // выбор сортировки
@@ -308,6 +322,38 @@ namespace Plan_Gostin
             }
 
             reader.Close();
+        }
+
+        // авторизация
+        public static void Avtorization(Form thisForm, Form secondForm, TextBox loginTB, TextBox passwordTB)
+        {
+            DataBase db = new DataBase();
+
+            var login = loginTB.Text; // --- Создание переменной логина и занесение туда информацию о логине которую мы вводим
+            var password = passwordTB.Text; // --- Создание переменной пароля и занесение туда информацию о логине которую мы вводим
+
+            SqlDataAdapter adapter = new SqlDataAdapter(); // --- Инициализация класса Адаптера для работы с БД
+            DataTable table = new DataTable(); // --- Инициализация класса Таблицы для работы с БД
+
+            string queryString = $"select ID, Loggin, Pasword from ADMINS where Loggin = '{login}' and Pasword = '{password}'"; // --- Строка SQL запроса
+
+            SqlCommand command = new SqlCommand(queryString, db.getConnection()); // --- Инициализация класса Команд(Sql Запрос, подключение Sqlbd)
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table); // --- в эту таблицу заносим данные
+
+            if (table.Rows.Count == 1) // --- если строка таблицы равна 1
+            {
+                MessageBox.Show("Вы успешно вошли!", "Успешно!!!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                isAdmin = true;
+                secondForm.Show();
+                thisForm.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Неправильный логин или пароль.", "Ошибка!!!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1); ;
+                passwordTB.Text = "";
+            }
         }
     }
 }

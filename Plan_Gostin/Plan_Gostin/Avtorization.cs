@@ -37,37 +37,14 @@ namespace Plan_Gostin
 
         private void buttonVoiti_Click(object sender, EventArgs e)
         {
-            var login = textBoxLogin.Text; // --- Создание переменной логина и занесение туда информацию о логине которую мы вводим
-            var password = textBoxPassword.Text; // --- Создание переменной пароля и занесение туда информацию о логине которую мы вводим
+            AdminPanel ap = new AdminPanel();
 
-            SqlDataAdapter adapter = new SqlDataAdapter(); // --- Инициализация класса Адаптера для работы с БД
-            DataTable table = new DataTable(); // --- Инициализация класса Таблицы для работы с БД
-
-            string queryString = $"select ID, Loggin, Pasword from ADMINS where Loggin = '{login}' and Pasword = '{password}'"; // --- Строка SQL запроса
-
-            SqlCommand command = new SqlCommand(queryString, db.getConnection()); // --- Инициализация класса Команд(Sql Запрос, подключение Sqlbd)
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table); // --- в эту таблицу заносим данные
-
-            if (table.Rows.Count == 1) // --- если строка таблицы равна 1
-            {
-                MessageBox.Show("Вы успешно вошли!", "Успешно!!!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                Help.isAdmin = true;
-                AdminPanel ap = new AdminPanel();
-                ap.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Неправильный логин или пароль.", "Ошибка!!!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1); ;
-                textBoxPassword.Text = "";
-            }    
+            Help.Avtorization(this, ap, textBoxLogin, textBoxPassword); // вся логика авторизации
         }
 
         private void buttonNazad_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Main main = new Main();
             main.Show();
         }

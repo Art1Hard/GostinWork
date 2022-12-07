@@ -59,7 +59,6 @@
       <DependentUpon>Avtorization.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
-    <Compile Include="FilterDB.cs" />
     <Compile Include="Help.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

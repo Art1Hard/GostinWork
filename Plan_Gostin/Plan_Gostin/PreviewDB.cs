@@ -7,24 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // подключение базы данных SQL
 
 namespace Plan_Gostin
 {
-    enum RowState // состояние данных в таблице
-    {
-        Existed,
-        New,
-        Modified,
-        ModifiedNew,
-        Deleted
-    }
 
     public partial class PreviewDB : Form
     {
-
-        int selectedRow;
-
         private string vibor; // переменная для помощи в "Выборе"
 
         
@@ -42,14 +30,16 @@ namespace Plan_Gostin
             dataGridView1.AllowUserToResizeColumns = false; // нельзя пользователю в dgw менять размер столбцов 
             dataGridView1.AllowUserToResizeRows = false; // нельзя пользователю в dgw менять размер строк 
             if (!Help.isAdmin) // если мы не вошли то,
-                dataGridView1.Width = 650; // dgw ширина
+                dataGridView1.Width = 393; // dgw ширина
+            else
+                dataGridView1.Width = 300;
 
             // FORM
             StartPosition = FormStartPosition.CenterScreen; // стартовая позиция фомы по середине экрана
 
             if (!Help.isAdmin) // если мы не админ,
             {
-                Width = 685; // ширина формы
+                Width = 430; // ширина формы
             }
 
             // FILTER
@@ -84,13 +74,13 @@ namespace Plan_Gostin
             {
                 AdminPanel adm = new AdminPanel();
                 adm.Show();
-                this.Hide();
+                Hide();
             }
             else // если нет,
             {
                 Main main = new Main();
                 main.Show();
-                this.Hide();
+                Hide();
             }
         }
 
@@ -179,6 +169,11 @@ namespace Plan_Gostin
             Help.SortDGW(vibor, "Доп услуги", vozrastRadioButton, dataGridView1, "Dop_uslugi", table); // сортирует по Услугам
             Help.SortDGW(vibor, "Окончание", vozrastRadioButton, dataGridView1, "Okonchanie", table); // сортирует по Дате
             Help.SortDGW(vibor, "Цена", vozrastRadioButton, dataGridView1, "Price", table); // сортирует по Цене
+        }
+
+        private void statusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

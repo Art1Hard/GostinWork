@@ -19,16 +19,12 @@ namespace Plan_Gostin
             KeyPreview = true;
         }
 
-        private void AdminPanel_Load(object sender, EventArgs e)
-        {
-        }
-
         private void выходИзАккаунтаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Main main = new Main();
             Help.isAdmin = false;
             main.Show();
-            this.Hide();
+            Hide();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,7 +36,7 @@ namespace Plan_Gostin
         {
             PreviewDB prev = new PreviewDB();
             prev.Show();
-            this.Hide();
+            Hide();
         }
 
         private void AdminPanel_KeyDown(object sender, KeyEventArgs e)

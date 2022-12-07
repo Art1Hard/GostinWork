@@ -62,27 +62,27 @@
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1016, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1016, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // просмотрБазДанныхToolStripMenuItem
             // 
             this.просмотрБазДанныхToolStripMenuItem.Name = "просмотрБазДанныхToolStripMenuItem";
-            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
+            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
             this.просмотрБазДанныхToolStripMenuItem.Text = "Просмотр баз данных";
             // 
             // обновитьТаблицуToolStripMenuItem
             // 
             this.обновитьТаблицуToolStripMenuItem.Name = "обновитьТаблицуToolStripMenuItem";
-            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.обновитьТаблицуToolStripMenuItem.Text = "Обновить таблицу";
             this.обновитьТаблицуToolStripMenuItem.Click += new System.EventHandler(this.обновитьТаблицуToolStripMenuItem_Click);
             // 
             // назадToolStripMenuItem
             // 
             this.назадToolStripMenuItem.Name = "назадToolStripMenuItem";
-            this.назадToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
+            this.назадToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
             // 
@@ -109,9 +109,9 @@
             this.filterGroupBox.Controls.Add(this.bigRadioButton);
             this.filterGroupBox.Controls.Add(this.viborComboBox);
             this.filterGroupBox.Controls.Add(this.filterTextBox);
-            this.filterGroupBox.Location = new System.Drawing.Point(44, 428);
+            this.filterGroupBox.Location = new System.Drawing.Point(12, 428);
             this.filterGroupBox.Name = "filterGroupBox";
-            this.filterGroupBox.Size = new System.Drawing.Size(319, 180);
+            this.filterGroupBox.Size = new System.Drawing.Size(176, 180);
             this.filterGroupBox.TabIndex = 2;
             this.filterGroupBox.TabStop = false;
             this.filterGroupBox.Text = "Фильтрация";
@@ -120,7 +120,7 @@
             // 
             this.filterButton.Location = new System.Drawing.Point(6, 136);
             this.filterButton.Name = "filterButton";
-            this.filterButton.Size = new System.Drawing.Size(307, 34);
+            this.filterButton.Size = new System.Drawing.Size(163, 34);
             this.filterButton.TabIndex = 8;
             this.filterButton.Text = "Фильтровать";
             this.filterButton.UseVisualStyleBackColor = true;
@@ -134,14 +134,15 @@
             "2. Свободен"});
             this.statusComboBox.Location = new System.Drawing.Point(6, 102);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(307, 24);
+            this.statusComboBox.Size = new System.Drawing.Size(163, 24);
             this.statusComboBox.TabIndex = 7;
+            this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.statusComboBox_SelectedIndexChanged);
             // 
             // viborButton
             // 
             this.viborButton.Location = new System.Drawing.Point(6, 61);
             this.viborButton.Name = "viborButton";
-            this.viborButton.Size = new System.Drawing.Size(307, 34);
+            this.viborButton.Size = new System.Drawing.Size(163, 34);
             this.viborButton.TabIndex = 6;
             this.viborButton.Text = "Выбрать";
             this.viborButton.UseVisualStyleBackColor = true;
@@ -150,7 +151,7 @@
             // littleRadioButton
             // 
             this.littleRadioButton.AutoSize = true;
-            this.littleRadioButton.Location = new System.Drawing.Point(221, 136);
+            this.littleRadioButton.Location = new System.Drawing.Point(90, 106);
             this.littleRadioButton.Name = "littleRadioButton";
             this.littleRadioButton.Size = new System.Drawing.Size(79, 20);
             this.littleRadioButton.TabIndex = 5;
@@ -161,7 +162,7 @@
             // bigRadioButton
             // 
             this.bigRadioButton.AutoSize = true;
-            this.bigRadioButton.Location = new System.Drawing.Point(221, 102);
+            this.bigRadioButton.Location = new System.Drawing.Point(6, 106);
             this.bigRadioButton.Name = "bigRadioButton";
             this.bigRadioButton.Size = new System.Drawing.Size(77, 20);
             this.bigRadioButton.TabIndex = 4;
@@ -180,15 +181,15 @@
             "5. Цена"});
             this.viborComboBox.Location = new System.Drawing.Point(6, 30);
             this.viborComboBox.Name = "viborComboBox";
-            this.viborComboBox.Size = new System.Drawing.Size(307, 24);
+            this.viborComboBox.Size = new System.Drawing.Size(163, 24);
             this.viborComboBox.TabIndex = 3;
             // 
             // filterTextBox
             // 
-            this.filterTextBox.Location = new System.Drawing.Point(6, 101);
+            this.filterTextBox.Location = new System.Drawing.Point(6, 132);
             this.filterTextBox.Multiline = true;
             this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(209, 55);
+            this.filterTextBox.Size = new System.Drawing.Size(163, 42);
             this.filterTextBox.TabIndex = 2;
             this.filterTextBox.TextChanged += new System.EventHandler(this.filterTextBox_TextChanged);
             // 
@@ -199,9 +200,9 @@
             this.sortGroupBox.Controls.Add(this.ubivRadioButton);
             this.sortGroupBox.Controls.Add(this.vozrastRadioButton);
             this.sortGroupBox.Controls.Add(this.sortComboBox);
-            this.sortGroupBox.Location = new System.Drawing.Point(524, 428);
+            this.sortGroupBox.Location = new System.Drawing.Point(260, 428);
             this.sortGroupBox.Name = "sortGroupBox";
-            this.sortGroupBox.Size = new System.Drawing.Size(319, 180);
+            this.sortGroupBox.Size = new System.Drawing.Size(276, 180);
             this.sortGroupBox.TabIndex = 9;
             this.sortGroupBox.TabStop = false;
             this.sortGroupBox.Text = "Сортировка";
@@ -210,7 +211,7 @@
             // 
             this.sortButton.Location = new System.Drawing.Point(6, 136);
             this.sortButton.Name = "sortButton";
-            this.sortButton.Size = new System.Drawing.Size(307, 34);
+            this.sortButton.Size = new System.Drawing.Size(259, 34);
             this.sortButton.TabIndex = 8;
             this.sortButton.Text = "Сортировать";
             this.sortButton.UseVisualStyleBackColor = true;
@@ -220,7 +221,7 @@
             // 
             this.viborSortButton.Location = new System.Drawing.Point(6, 61);
             this.viborSortButton.Name = "viborSortButton";
-            this.viborSortButton.Size = new System.Drawing.Size(307, 34);
+            this.viborSortButton.Size = new System.Drawing.Size(259, 34);
             this.viborSortButton.TabIndex = 6;
             this.viborSortButton.Text = "Выбрать";
             this.viborSortButton.UseVisualStyleBackColor = true;
@@ -229,7 +230,7 @@
             // ubivRadioButton
             // 
             this.ubivRadioButton.AutoSize = true;
-            this.ubivRadioButton.Location = new System.Drawing.Point(197, 106);
+            this.ubivRadioButton.Location = new System.Drawing.Point(149, 106);
             this.ubivRadioButton.Name = "ubivRadioButton";
             this.ubivRadioButton.Size = new System.Drawing.Size(116, 20);
             this.ubivRadioButton.TabIndex = 5;
@@ -257,9 +258,9 @@
             "3. Доп. Услуги",
             "4. Окончание",
             "5. Цена"});
-            this.sortComboBox.Location = new System.Drawing.Point(6, 30);
+            this.sortComboBox.Location = new System.Drawing.Point(6, 31);
             this.sortComboBox.Name = "sortComboBox";
-            this.sortComboBox.Size = new System.Drawing.Size(307, 24);
+            this.sortComboBox.Size = new System.Drawing.Size(259, 24);
             this.sortComboBox.TabIndex = 3;
             // 
             // PreviewDB

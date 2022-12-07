@@ -61,14 +61,14 @@
             this.выходToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(787, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(787, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // просмотрБазДанныхToolStripMenuItem
             // 
             this.просмотрБазДанныхToolStripMenuItem.Name = "просмотрБазДанныхToolStripMenuItem";
-            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.просмотрБазДанныхToolStripMenuItem.Text = "Просмотр баз данных";
             // 
             // аккаунтToolStripMenuItem
@@ -76,7 +76,7 @@
             this.аккаунтToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходИзАккаунтаToolStripMenuItem});
             this.аккаунтToolStripMenuItem.Name = "аккаунтToolStripMenuItem";
-            this.аккаунтToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.аккаунтToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.аккаунтToolStripMenuItem.Text = "Аккаунт";
             // 
             // выходИзАккаунтаToolStripMenuItem
@@ -89,7 +89,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -244,7 +244,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminPanel";
             this.Text = "Панель администратора";
-            this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AdminPanel_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

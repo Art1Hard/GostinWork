@@ -41,9 +41,9 @@ VALUES (125,'Свободен', 'Нет', '11/12/2024', 300);
 INSERT INTO ROOMS (Gost_ROOM, Gost_Status, Dop_uslugi, Okonchanie, Price)
 VALUES (130,'Свободен', 'Бесплатные закуски', '09/09/2023', 1500);
 
-DROP TABLE ROOMS;
-
 SELECT * FROM ROOMS
 
 Select * from ROOMS order by Dop_uslugi DESC
 Select * from ROOMS order by Dop_uslugi
+
+update ROOMS set Gost_Status = 'Свободен';

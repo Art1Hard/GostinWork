@@ -53,18 +53,21 @@
             this.groupBoxAvtorization.Controls.Add(this.textBoxLogin);
             this.groupBoxAvtorization.Controls.Add(this.labelArrow);
             this.groupBoxAvtorization.Controls.Add(this.labelTitle);
-            this.groupBoxAvtorization.Location = new System.Drawing.Point(89, 12);
+            this.groupBoxAvtorization.Location = new System.Drawing.Point(67, 10);
+            this.groupBoxAvtorization.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAvtorization.Name = "groupBoxAvtorization";
-            this.groupBoxAvtorization.Size = new System.Drawing.Size(530, 379);
+            this.groupBoxAvtorization.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxAvtorization.Size = new System.Drawing.Size(398, 308);
             this.groupBoxAvtorization.TabIndex = 0;
             this.groupBoxAvtorization.TabStop = false;
             // 
             // buttonNazad
             // 
             this.buttonNazad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNazad.Location = new System.Drawing.Point(271, 295);
+            this.buttonNazad.Location = new System.Drawing.Point(203, 240);
+            this.buttonNazad.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNazad.Name = "buttonNazad";
-            this.buttonNazad.Size = new System.Drawing.Size(129, 56);
+            this.buttonNazad.Size = new System.Drawing.Size(97, 46);
             this.buttonNazad.TabIndex = 10;
             this.buttonNazad.Text = "Назад";
             this.buttonNazad.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@
             // buttonVoiti
             // 
             this.buttonVoiti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonVoiti.Location = new System.Drawing.Point(91, 295);
+            this.buttonVoiti.Location = new System.Drawing.Point(68, 240);
+            this.buttonVoiti.Margin = new System.Windows.Forms.Padding(2);
             this.buttonVoiti.Name = "buttonVoiti";
-            this.buttonVoiti.Size = new System.Drawing.Size(129, 56);
+            this.buttonVoiti.Size = new System.Drawing.Size(97, 46);
             this.buttonVoiti.TabIndex = 9;
             this.buttonVoiti.Text = "Войти";
             this.buttonVoiti.UseVisualStyleBackColor = true;
@@ -84,9 +88,10 @@
             // checkBoxShowPassword
             // 
             this.checkBoxShowPassword.AutoSize = true;
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(406, 233);
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(304, 189);
+            this.checkBoxShowPassword.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(18, 17);
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(15, 14);
             this.checkBoxShowPassword.TabIndex = 8;
             this.checkBoxShowPassword.UseVisualStyleBackColor = true;
             this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
@@ -95,43 +100,51 @@
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassword.Location = new System.Drawing.Point(202, 187);
+            this.labelPassword.ForeColor = System.Drawing.Color.Transparent;
+            this.labelPassword.Location = new System.Drawing.Point(152, 152);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(102, 29);
+            this.labelPassword.Size = new System.Drawing.Size(81, 24);
             this.labelPassword.TabIndex = 7;
             this.labelPassword.Text = "Пароль:";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(91, 229);
+            this.textBoxPassword.Location = new System.Drawing.Point(68, 186);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(309, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(233, 20);
             this.textBoxPassword.TabIndex = 6;
             // 
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLogin.Location = new System.Drawing.Point(202, 105);
+            this.labelLogin.ForeColor = System.Drawing.Color.Transparent;
+            this.labelLogin.Location = new System.Drawing.Point(152, 85);
+            this.labelLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(88, 29);
+            this.labelLogin.Size = new System.Drawing.Size(69, 24);
             this.labelLogin.TabIndex = 5;
             this.labelLogin.Text = "Логин:";
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(91, 147);
+            this.textBoxLogin.Location = new System.Drawing.Point(68, 119);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(309, 22);
+            this.textBoxLogin.Size = new System.Drawing.Size(233, 20);
             this.textBoxLogin.TabIndex = 4;
             // 
             // labelArrow
             // 
             this.labelArrow.AutoSize = true;
             this.labelArrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelArrow.Location = new System.Drawing.Point(182, 50);
+            this.labelArrow.ForeColor = System.Drawing.Color.Transparent;
+            this.labelArrow.Location = new System.Drawing.Point(136, 41);
+            this.labelArrow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelArrow.Name = "labelArrow";
-            this.labelArrow.Size = new System.Drawing.Size(130, 29);
+            this.labelArrow.Size = new System.Drawing.Size(100, 24);
             this.labelArrow.TabIndex = 3;
             this.labelArrow.Text = "_________";
             // 
@@ -140,21 +153,25 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTitle.Location = new System.Drawing.Point(148, 18);
+            this.labelTitle.ForeColor = System.Drawing.Color.Transparent;
+            this.labelTitle.Location = new System.Drawing.Point(111, 15);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(197, 32);
+            this.labelTitle.Size = new System.Drawing.Size(156, 26);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Авторизация";
             // 
             // Avtorization
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 417);
+            this.ClientSize = new System.Drawing.Size(544, 339);
             this.Controls.Add(this.groupBoxAvtorization);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Avtorization";
             this.Text = "Авторизация";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Avtorization_FormClosed);
             this.Load += new System.EventHandler(this.Avtorization_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Avtorization_KeyDown);
             this.groupBoxAvtorization.ResumeLayout(false);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace Plan_Gostin
 {
@@ -14,17 +9,13 @@ namespace Plan_Gostin
         public void openConnection() // открытие подключения
         {
             if (con.State == System.Data.ConnectionState.Closed)
-            {
                 con.Open();
-            }
         }
 
         public void closeConnection() // закрытие подключения
         {
             if (con.State == System.Data.ConnectionState.Open)
-            {
                 con.Close();
-            }
         }
 
         public SqlConnection getConnection() // получение подключения

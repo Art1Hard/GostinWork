@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Plan_Gostin
 {
@@ -15,15 +7,15 @@ namespace Plan_Gostin
         public Ralation()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen; // --- Начальная позиция окна(центр)
-            KeyPreview = true;
+            StartPosition = FormStartPosition.CenterScreen; // Начальная позиция окна(центр)
+            KeyPreview = true; // горячие клавиши
         }
 
         private void Ralation_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if(e.KeyCode == Keys.Escape) // если нажата esc, то
             {
-                this.Close();
+                Close(); // закрывается форма
             }
         }
     }

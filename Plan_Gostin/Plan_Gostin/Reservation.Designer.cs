@@ -30,7 +30,6 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.просмотрБазДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обновитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buyButton = new System.Windows.Forms.Button();
@@ -75,7 +74,6 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотрБазДанныхToolStripMenuItem,
             this.обновитьТаблицуToolStripMenuItem,
             this.назадToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -84,12 +82,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(504, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // просмотрБазДанныхToolStripMenuItem
-            // 
-            this.просмотрБазДанныхToolStripMenuItem.Name = "просмотрБазДанныхToolStripMenuItem";
-            this.просмотрБазДанныхToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
-            this.просмотрБазДанныхToolStripMenuItem.Text = "Просмотр баз данных";
             // 
             // обновитьТаблицуToolStripMenuItem
             // 
@@ -107,6 +99,7 @@
             // 
             // buyButton
             // 
+            this.buyButton.ForeColor = System.Drawing.Color.Black;
             this.buyButton.Location = new System.Drawing.Point(10, 94);
             this.buyButton.Name = "buyButton";
             this.buyButton.Size = new System.Drawing.Size(187, 23);
@@ -124,6 +117,7 @@
             // 
             // exitButton
             // 
+            this.exitButton.ForeColor = System.Drawing.Color.Black;
             this.exitButton.Location = new System.Drawing.Point(10, 123);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(187, 23);
@@ -175,6 +169,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Controls.Add(this.statusTextBox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.buyButton);
@@ -183,6 +178,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.exitButton);
             this.groupBox1.Controls.Add(this.roomTextBox);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(9, 350);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(209, 159);
@@ -192,6 +188,7 @@
             // 
             // filterGroupBox
             // 
+            this.filterGroupBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.filterGroupBox.Controls.Add(this.filterButton);
             this.filterGroupBox.Controls.Add(this.statusComboBox);
             this.filterGroupBox.Controls.Add(this.viborButton);
@@ -199,21 +196,23 @@
             this.filterGroupBox.Controls.Add(this.bigRadioButton);
             this.filterGroupBox.Controls.Add(this.viborComboBox);
             this.filterGroupBox.Controls.Add(this.filterTextBox);
-            this.filterGroupBox.Location = new System.Drawing.Point(361, 357);
+            this.filterGroupBox.ForeColor = System.Drawing.Color.White;
+            this.filterGroupBox.Location = new System.Drawing.Point(287, 350);
             this.filterGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.filterGroupBox.Name = "filterGroupBox";
             this.filterGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.filterGroupBox.Size = new System.Drawing.Size(132, 146);
+            this.filterGroupBox.Size = new System.Drawing.Size(206, 159);
             this.filterGroupBox.TabIndex = 17;
             this.filterGroupBox.TabStop = false;
             this.filterGroupBox.Text = "Фильтрация";
             // 
             // filterButton
             // 
-            this.filterButton.Location = new System.Drawing.Point(4, 110);
+            this.filterButton.ForeColor = System.Drawing.Color.Black;
+            this.filterButton.Location = new System.Drawing.Point(4, 107);
             this.filterButton.Margin = new System.Windows.Forms.Padding(2);
             this.filterButton.Name = "filterButton";
-            this.filterButton.Size = new System.Drawing.Size(122, 28);
+            this.filterButton.Size = new System.Drawing.Size(198, 46);
             this.filterButton.TabIndex = 8;
             this.filterButton.Text = "Фильтровать";
             this.filterButton.UseVisualStyleBackColor = true;
@@ -225,18 +224,19 @@
             this.statusComboBox.Items.AddRange(new object[] {
             "1. Занят",
             "2. Свободен"});
-            this.statusComboBox.Location = new System.Drawing.Point(4, 83);
+            this.statusComboBox.Location = new System.Drawing.Point(4, 82);
             this.statusComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(123, 21);
+            this.statusComboBox.Size = new System.Drawing.Size(198, 21);
             this.statusComboBox.TabIndex = 7;
             // 
             // viborButton
             // 
+            this.viborButton.ForeColor = System.Drawing.Color.Black;
             this.viborButton.Location = new System.Drawing.Point(4, 50);
             this.viborButton.Margin = new System.Windows.Forms.Padding(2);
             this.viborButton.Name = "viborButton";
-            this.viborButton.Size = new System.Drawing.Size(122, 28);
+            this.viborButton.Size = new System.Drawing.Size(198, 28);
             this.viborButton.TabIndex = 6;
             this.viborButton.Text = "Выбрать";
             this.viborButton.UseVisualStyleBackColor = true;
@@ -245,7 +245,7 @@
             // littleRadioButton
             // 
             this.littleRadioButton.AutoSize = true;
-            this.littleRadioButton.Location = new System.Drawing.Point(68, 86);
+            this.littleRadioButton.Location = new System.Drawing.Point(136, 86);
             this.littleRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.littleRadioButton.Name = "littleRadioButton";
             this.littleRadioButton.Size = new System.Drawing.Size(66, 17);
@@ -278,7 +278,7 @@
             this.viborComboBox.Location = new System.Drawing.Point(4, 24);
             this.viborComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.viborComboBox.Name = "viborComboBox";
-            this.viborComboBox.Size = new System.Drawing.Size(123, 21);
+            this.viborComboBox.Size = new System.Drawing.Size(198, 21);
             this.viborComboBox.TabIndex = 3;
             // 
             // filterTextBox
@@ -287,7 +287,7 @@
             this.filterTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.filterTextBox.Multiline = true;
             this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(123, 35);
+            this.filterTextBox.Size = new System.Drawing.Size(198, 46);
             this.filterTextBox.TabIndex = 2;
             this.filterTextBox.TextChanged += new System.EventHandler(this.filterTextBox_TextChanged_1);
             // 
@@ -304,6 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Reservation";
             this.Text = "Бронирование";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Reservation_FormClosed);
             this.Load += new System.EventHandler(this.Reservation_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Reservation_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -323,7 +324,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem назадToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem просмотрБазДанныхToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обновитьТаблицуToolStripMenuItem;
         private System.Windows.Forms.Button buyButton;
         private System.Windows.Forms.TextBox priceTextBox;

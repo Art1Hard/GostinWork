@@ -74,7 +74,7 @@
             this.labelTitle1.AutoSize = true;
             this.labelTitle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTitle1.ForeColor = System.Drawing.Color.White;
+            this.labelTitle1.ForeColor = System.Drawing.Color.Transparent;
             this.labelTitle1.Location = new System.Drawing.Point(4, 15);
             this.labelTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle1.Name = "labelTitle1";
@@ -86,7 +86,7 @@
             // 
             this.labelTitle2.AutoSize = true;
             this.labelTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTitle2.ForeColor = System.Drawing.Color.White;
+            this.labelTitle2.ForeColor = System.Drawing.Color.Transparent;
             this.labelTitle2.Location = new System.Drawing.Point(258, 50);
             this.labelTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle2.Name = "labelTitle2";
@@ -125,7 +125,7 @@
             // 
             this.labelArrow1.AutoSize = true;
             this.labelArrow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelArrow1.ForeColor = System.Drawing.Color.White;
+            this.labelArrow1.ForeColor = System.Drawing.Color.Transparent;
             this.labelArrow1.Location = new System.Drawing.Point(82, 102);
             this.labelArrow1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelArrow1.Name = "labelArrow1";
@@ -137,7 +137,7 @@
             // 
             this.labelAvtTitle2.AutoSize = true;
             this.labelAvtTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAvtTitle2.ForeColor = System.Drawing.Color.White;
+            this.labelAvtTitle2.ForeColor = System.Drawing.Color.Transparent;
             this.labelAvtTitle2.Location = new System.Drawing.Point(49, 79);
             this.labelAvtTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAvtTitle2.Name = "labelAvtTitle2";
@@ -149,7 +149,7 @@
             // 
             this.labelAvtTitle1.AutoSize = true;
             this.labelAvtTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAvtTitle1.ForeColor = System.Drawing.Color.White;
+            this.labelAvtTitle1.ForeColor = System.Drawing.Color.Transparent;
             this.labelAvtTitle1.Location = new System.Drawing.Point(18, 47);
             this.labelAvtTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAvtTitle1.Name = "labelAvtTitle1";
@@ -223,7 +223,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(82, 102);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -235,7 +235,7 @@
             // 
             this.labelReservTitle2.AutoSize = true;
             this.labelReservTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelReservTitle2.ForeColor = System.Drawing.Color.White;
+            this.labelReservTitle2.ForeColor = System.Drawing.Color.Transparent;
             this.labelReservTitle2.Location = new System.Drawing.Point(53, 79);
             this.labelReservTitle2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReservTitle2.Name = "labelReservTitle2";
@@ -247,7 +247,7 @@
             // 
             this.labelReservTitle1.AutoSize = true;
             this.labelReservTitle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelReservTitle1.ForeColor = System.Drawing.Color.White;
+            this.labelReservTitle1.ForeColor = System.Drawing.Color.Transparent;
             this.labelReservTitle1.Location = new System.Drawing.Point(42, 47);
             this.labelReservTitle1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelReservTitle1.Name = "labelReservTitle1";
@@ -285,20 +285,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(182, 62);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "_________";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelRelationTitle
             // 
             this.labelRelationTitle.AutoSize = true;
             this.labelRelationTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelRelationTitle.ForeColor = System.Drawing.Color.White;
+            this.labelRelationTitle.ForeColor = System.Drawing.Color.Transparent;
             this.labelRelationTitle.Location = new System.Drawing.Point(4, 15);
             this.labelRelationTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRelationTitle.Name = "labelRelationTitle";
@@ -322,7 +321,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Главная";
-            this.Load += new System.EventHandler(this.Main_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.groupBoxTitle.ResumeLayout(false);
             this.groupBoxTitle.PerformLayout();

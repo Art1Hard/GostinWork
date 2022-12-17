@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient; // подключение базы данных SQL
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Plan_Gostin
@@ -13,11 +8,7 @@ namespace Plan_Gostin
     {
         public enum RowState // состояние данных в таблице
         {
-            Existed,
-            New,
-            Modified,
-            ModifiedNew,
-            Deleted
+            ModifiedNew
         }
 
         public static bool isAdmin = false; // проверка на администратора
@@ -25,9 +16,7 @@ namespace Plan_Gostin
         public static void SortDisabled(DataGridView dgw) // отключаем сортировку в dgw
         {
             foreach (DataGridViewColumn column in dgw.Columns)
-            {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
         }
 
         public static void ReadSingRow(DataGridView dgw, IDataRecord record) // чтение из БД-таблицы информацию и заносим эти строки в DataGridView
@@ -56,9 +45,7 @@ namespace Plan_Gostin
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
-            {
                 ReadSingRow(dgw, reader);
-            }
             reader.Close();
         }
 
@@ -78,9 +65,8 @@ namespace Plan_Gostin
         {
             // скрытие ненужных столбцов
             if (!isAdmin) // если вы не вошли, то скрываются id номеров
-            {
                 dgw.Columns[0].Visible = false;
-            }
+      
             dgw.Columns[6].Visible = false;
         }
 
@@ -157,9 +143,7 @@ namespace Plan_Gostin
                 SqlDataReader reader = com.ExecuteReader();
 
                 while (reader.Read())
-                {
                     ReadSingRow(dgw, reader);
-                }
 
                 reader.Close();
             }
@@ -246,9 +230,7 @@ namespace Plan_Gostin
             SqlDataReader reader = com.ExecuteReader();
 
             while (reader.Read())
-            {
                 ReadSingRow(dgw, reader);
-            }
 
             reader.Close();
         }
@@ -305,7 +287,6 @@ namespace Plan_Gostin
                 default:
                     status = "";
                     break;
-
             }
 
             string filterString = string.Format("Select * from {1} where {2} like '%{0}%'", status, sqlTable, sqlRow);
@@ -317,9 +298,7 @@ namespace Plan_Gostin
             SqlDataReader reader = com.ExecuteReader();
 
             while (reader.Read())
-            {
                 ReadSingRow(dgw, reader);
-            }
 
             reader.Close();
         }
@@ -354,6 +333,34 @@ namespace Plan_Gostin
                 MessageBox.Show("Неправильный логин или пароль.", "Ошибка!!!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1); ;
                 passwordTB.Text = "";
             }
+        }
+
+        public static void Updating(DataGridView dataGridView, TextBox roomTextBox, TextBox statusTextBox, string status) // метод для Update-таблицы
+        {
+            try
+            {
+                DataBase dataBase = new DataBase();
+
+                var isStatus = statusTextBox.Text;
+
+                if (isStatus != status)
+                {
+                    dataBase.openConnection();
+                    var room = roomTextBox.Text;
+                    var changeQuery = $"update ROOMS set Gost_Status = '{status}' where Gost_ROOM = {room}";
+
+                    var command = new SqlCommand(changeQuery, dataBase.getConnection());
+                    command.ExecuteNonQuery();
+                }
+                else
+                    MessageBox.Show("Уже " + status);
+            }
+            catch
+            {
+                MessageBox.Show("Возможно пустые строки, попробуйте выбрать элемент в таблице");
+            }
+
+            RefreshDataGrid(dataGridView);
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Plan_Gostin
@@ -21,13 +14,17 @@ namespace Plan_Gostin
 
         private void выходToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialog = MessageBox.Show("Вы действительно хотите выйти?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void buttonAvtorization_Click(object sender, EventArgs e)
         {
-            avt.ShowDialog();
-            this.Hide();
+            avt.Show();
+            Hide();
         }
 
         private void войтиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,29 +38,22 @@ namespace Plan_Gostin
             rel.ShowDialog();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonReservation_Click(object sender, EventArgs e)
         {
             PreviewDB prev = new PreviewDB();
             prev.Show();
-            this.Hide();
+            Hide();
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
-            {
-                Application.Exit();
-            }
+            if (e.KeyCode == Keys.Escape)
+                выходToolStripMenuItem1_Click(выходToolStripMenuItem1, null);
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

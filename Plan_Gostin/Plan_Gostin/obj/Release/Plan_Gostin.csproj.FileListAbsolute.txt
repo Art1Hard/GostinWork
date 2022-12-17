@@ -1,0 +1,16 @@
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\bin\Release\Plan_Gostin.exe.config
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\bin\Release\Plan_Gostin.exe
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\bin\Release\Plan_Gostin.pdb
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.csproj.AssemblyReference.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.csproj.SuggestedBindingRedirects.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.AdminPanel.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.Avtorization.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.Main.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.PreviewDB.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.Properties.Resources.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.Ralation.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.Reservation.resources
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.csproj.GenerateResource.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.csproj.CoreCompileInputs.cache
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.exe
+D:\C#\GostinWork\Plan_Gostin\Plan_Gostin\obj\Release\Plan_Gostin.pdb

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Plan_Gostin
@@ -21,15 +14,23 @@ namespace Plan_Gostin
 
         private void выходИзАккаунтаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Main main = new Main();
-            Help.isAdmin = false;
-            main.Show();
-            Hide();
+            DialogResult dialog = MessageBox.Show("Вы действительно хотите выйти из совоего Аккаунта?", "Аккаунт", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.Yes)
+            {
+                Main main = new Main();
+                Help.isAdmin = false;
+                main.Show();
+                Hide();
+            }    
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialog = MessageBox.Show("Вы действительно хотите выйти?", "Выход", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void buttonReservation_Click(object sender, EventArgs e)
@@ -41,10 +42,8 @@ namespace Plan_Gostin
 
         private void AdminPanel_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
-            {
-                выходToolStripMenuItem_Click(выходToolStripMenuItem, null);
-            }
+            if (e.KeyCode == Keys.Escape)
+                выходИзАккаунтаToolStripMenuItem_Click(выходИзАккаунтаToolStripMenuItem, null);
         }
 
         private void buttonBuy_Click(object sender, EventArgs e)
@@ -52,6 +51,16 @@ namespace Plan_Gostin
             Reservation res = new Reservation();
             res.Show();
             Hide();
+        }
+
+        private void AdminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            выходToolStripMenuItem_Click(выходToolStripMenuItem, null);
+        }
+
+        private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

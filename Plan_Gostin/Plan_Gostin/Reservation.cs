@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Plan_Gostin
@@ -14,7 +6,6 @@ namespace Plan_Gostin
     public partial class Reservation : Form
     {
         private int selectedRow;
-        bool isFilter = false;
         private string vibor;
 
         public Reservation()
@@ -56,8 +47,11 @@ namespace Plan_Gostin
 
         private void Reservation_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape) // если нажать esc то,
                 назадToolStripMenuItem_Click(назадToolStripMenuItem, null);
+
+            if (e.KeyCode == Keys.R) // если нажать R то,
+                обновитьТаблицуToolStripMenuItem_Click(обновитьТаблицуToolStripMenuItem, null);
         }
 
         private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,8 +61,7 @@ namespace Plan_Gostin
 
         private void buyButton_Click(object sender, EventArgs e)
         {
-            Updating(roomTextBox, statusTextBox, "Занят");
-            Help.RefreshDataGrid(dataGridView1);
+            Help.Updating(dataGridView1, roomTextBox, statusTextBox, "Занят");
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -85,38 +78,9 @@ namespace Plan_Gostin
             }
         }
 
-        private static void Updating(TextBox roomTextBox, TextBox statusTextBox, string status)
-        {
-            try
-            {
-                DataBase dataBase = new DataBase();
-
-                var isStatus = statusTextBox.Text;
-
-                if (isStatus != status)
-                {
-                    dataBase.openConnection();
-                    var room = roomTextBox.Text;
-                    var changeQuery = $"update ROOMS set Gost_Status = '{status}' where Gost_ROOM = {room}";
-
-                    var command = new SqlCommand(changeQuery, dataBase.getConnection());
-                    command.ExecuteNonQuery();
-                }
-                else
-                    MessageBox.Show("Уже " + status);
-            }
-            catch
-            {
-                MessageBox.Show("Возможно пустые строки, попробуйте выбрать элемент в таблице");
-            }
-
-
-        }
-
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Updating(roomTextBox, statusTextBox, "Свободен");
-            Help.RefreshDataGrid(dataGridView1);
+            Help.Updating(dataGridView1, roomTextBox, statusTextBox, "Свободен"); // метод для Update-таблицы
         }
 
         private void viborButton_Click(object sender, EventArgs e)
@@ -145,6 +109,11 @@ namespace Plan_Gostin
         private void filterButton_Click_1(object sender, EventArgs e)
         {
             Help.Filter_DB(dataGridView1, statusComboBox, table, "Gost_Status"); // фильтрует по Статусу
+        }
+
+        private void Reservation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            назадToolStripMenuItem_Click(назадToolStripMenuItem, null);
         }
     }
 }

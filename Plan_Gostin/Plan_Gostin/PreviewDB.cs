@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Plan_Gostin
@@ -15,32 +9,31 @@ namespace Plan_Gostin
     {
         private string vibor; // переменная для помощи в "Выборе"
 
-        
-
         public PreviewDB()
         {
             InitializeComponent();
-
             PropertiesElementInit(); // свойства элементов при инициализации
         }
 
         private void PropertiesElementInit() // при инициализации элементы примут следующие свойства,
         {
-            // DATAGRIDVIEW
+            // DATAGRIDVIEW + FORM + GROUPBOX
             dataGridView1.AllowUserToResizeColumns = false; // нельзя пользователю в dgw менять размер столбцов 
             dataGridView1.AllowUserToResizeRows = false; // нельзя пользователю в dgw менять размер строк 
             if (!Help.isAdmin) // если мы не вошли то,
+            {
                 dataGridView1.Width = 393; // dgw ширина
+                Width = 430; // ширина формы
+            }
             else
-                dataGridView1.Width = 300;
+            {
+                dataGridView1.Width = 433;
+                Width = 465;
+                sortGroupBox.Location = new Point(235, 348); // расположение группы сортировки.
+            }
 
             // FORM
             StartPosition = FormStartPosition.CenterScreen; // стартовая позиция фомы по середине экрана
-
-            if (!Help.isAdmin) // если мы не админ,
-            {
-                Width = 430; // ширина формы
-            }
 
             // FILTER
             filterTextBox.Visible = false; // скрытие текст-бокса
@@ -87,14 +80,10 @@ namespace Plan_Gostin
         private void PreviewDB_KeyDown(object sender, KeyEventArgs e) // метод привязывания кнопок
         {
             if (e.KeyCode == Keys.Escape) // если нажать esc то,
-            {
-                назадToolStripMenuItem_Click(назадToolStripMenuItem, null); // вызывается метод возвращения на предыдущую форму
-            }
+                назадToolStripMenuItem_Click(назадToolStripMenuItem, null);
 
             if (e.KeyCode == Keys.R) // если нажать R то,
-            {
-                обновитьТаблицуToolStripMenuItem_Click(обновитьТаблицуToolStripMenuItem, null); // вызывается метод обновления таблицы
-            }
+                обновитьТаблицуToolStripMenuItem_Click(обновитьТаблицуToolStripMenuItem, null);
         }
 
         private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e) // обновление таблицы
@@ -171,9 +160,9 @@ namespace Plan_Gostin
             Help.SortDGW(vibor, "Цена", vozrastRadioButton, dataGridView1, "Price", table); // сортирует по Цене
         }
 
-        private void statusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void PreviewDB_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            назадToolStripMenuItem_Click(назадToolStripMenuItem, null);
         }
     }
 }

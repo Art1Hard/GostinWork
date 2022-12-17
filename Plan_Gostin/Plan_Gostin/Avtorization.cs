@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; // --- SQLServer
 
 namespace Plan_Gostin
 {
     public partial class Avtorization : Form
     {
-        DataBase db = new DataBase(); // --- Наш класс базы данных
         public Avtorization()
         {
             InitializeComponent();
@@ -28,9 +19,7 @@ namespace Plan_Gostin
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxShowPassword.Checked)
-            {
                 textBoxPassword.PasswordChar = '\0';
-            }
             else
                 textBoxPassword.PasswordChar = '*';
         }
@@ -51,15 +40,19 @@ namespace Plan_Gostin
 
         private void Avtorization_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-            {
+            if (e.KeyCode == Keys.Enter && textBoxLogin.Focused)
+                textBoxPassword.Focus();
+
+            else if(e.KeyCode == Keys.Enter)
                 buttonVoiti_Click(buttonVoiti, null);
-            }
 
             if(e.KeyCode == Keys.Escape)
-            {
                 buttonNazad_Click(buttonNazad, null);
-            }
+        }
+
+        private void Avtorization_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            buttonNazad_Click(buttonNazad, null);
         }
     }
 }

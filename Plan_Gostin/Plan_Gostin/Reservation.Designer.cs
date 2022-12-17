@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservation));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.обновитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,21 +80,23 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(504, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(504, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // обновитьТаблицуToolStripMenuItem
             // 
+            this.обновитьТаблицуToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.Refresh;
             this.обновитьТаблицуToolStripMenuItem.Name = "обновитьТаблицуToolStripMenuItem";
-            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.обновитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.обновитьТаблицуToolStripMenuItem.Text = "Обновить таблицу";
             this.обновитьТаблицуToolStripMenuItem.Click += new System.EventHandler(this.обновитьТаблицуToolStripMenuItem_Click);
             // 
             // назадToolStripMenuItem
             // 
+            this.назадToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.exit;
             this.назадToolStripMenuItem.Name = "назадToolStripMenuItem";
-            this.назадToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.назадToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.назадToolStripMenuItem.Text = "Назад";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click);
             // 
@@ -300,6 +303,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Reservation";

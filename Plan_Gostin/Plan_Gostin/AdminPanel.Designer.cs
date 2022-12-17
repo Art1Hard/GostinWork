@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.аккаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходИзАккаунтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTitle = new System.Windows.Forms.GroupBox();
             this.labelTitle1 = new System.Windows.Forms.Label();
@@ -45,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelReservTitle2 = new System.Windows.Forms.Label();
             this.labelReservTitle1 = new System.Windows.Forms.Label();
+            this.аккаунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходИзАккаунтаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBoxTitle.SuspendLayout();
             this.groupBoxBuy.SuspendLayout();
@@ -60,29 +61,15 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(590, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(590, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // аккаунтToolStripMenuItem
-            // 
-            this.аккаунтToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выходИзАккаунтаToolStripMenuItem});
-            this.аккаунтToolStripMenuItem.Name = "аккаунтToolStripMenuItem";
-            this.аккаунтToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.аккаунтToolStripMenuItem.Text = "Аккаунт";
-            // 
-            // выходИзАккаунтаToolStripMenuItem
-            // 
-            this.выходИзАккаунтаToolStripMenuItem.Name = "выходИзАккаунтаToolStripMenuItem";
-            this.выходИзАккаунтаToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.выходИзАккаунтаToolStripMenuItem.Text = "Выйти";
-            this.выходИзАккаунтаToolStripMenuItem.Click += new System.EventHandler(this.выходИзАккаунтаToolStripMenuItem_Click);
-            // 
             // выходToolStripMenuItem
             // 
+            this.выходToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.exit;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -92,9 +79,9 @@
             this.groupBoxTitle.Controls.Add(this.labelTitle1);
             this.groupBoxTitle.Controls.Add(this.labelTitle2);
             this.groupBoxTitle.Location = new System.Drawing.Point(50, 58);
-            this.groupBoxTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTitle.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxTitle.Name = "groupBoxTitle";
-            this.groupBoxTitle.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxTitle.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxTitle.Size = new System.Drawing.Size(478, 56);
             this.groupBoxTitle.TabIndex = 1;
             this.groupBoxTitle.TabStop = false;
@@ -130,9 +117,9 @@
             this.groupBoxBuy.Controls.Add(this.labelBuyTitle2);
             this.groupBoxBuy.Controls.Add(this.labelBuyTitle1);
             this.groupBoxBuy.Location = new System.Drawing.Point(9, 157);
-            this.groupBoxBuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxBuy.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxBuy.Name = "groupBoxBuy";
-            this.groupBoxBuy.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxBuy.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxBuy.Size = new System.Drawing.Size(275, 199);
             this.groupBoxBuy.TabIndex = 2;
             this.groupBoxBuy.TabStop = false;
@@ -141,7 +128,7 @@
             // 
             this.buttonBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBuy.Location = new System.Drawing.Point(22, 136);
-            this.buttonBuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBuy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(223, 46);
             this.buttonBuy.TabIndex = 3;
@@ -193,9 +180,9 @@
             this.groupBoxReservation.Controls.Add(this.labelReservTitle2);
             this.groupBoxReservation.Controls.Add(this.labelReservTitle1);
             this.groupBoxReservation.Location = new System.Drawing.Point(306, 157);
-            this.groupBoxReservation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxReservation.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxReservation.Name = "groupBoxReservation";
-            this.groupBoxReservation.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxReservation.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxReservation.Size = new System.Drawing.Size(275, 199);
             this.groupBoxReservation.TabIndex = 5;
             this.groupBoxReservation.TabStop = false;
@@ -204,7 +191,7 @@
             // 
             this.buttonReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonReservation.Location = new System.Drawing.Point(22, 136);
-            this.buttonReservation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonReservation.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReservation.Name = "buttonReservation";
             this.buttonReservation.Size = new System.Drawing.Size(223, 46);
             this.buttonReservation.TabIndex = 3;
@@ -248,6 +235,23 @@
             this.labelReservTitle1.TabIndex = 0;
             this.labelReservTitle1.Text = "Просмотр занятой/";
             // 
+            // аккаунтToolStripMenuItem
+            // 
+            this.аккаунтToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выходИзАккаунтаToolStripMenuItem});
+            this.аккаунтToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.account_avatar_face_man_people_profile_user_icon_123197;
+            this.аккаунтToolStripMenuItem.Name = "аккаунтToolStripMenuItem";
+            this.аккаунтToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.аккаунтToolStripMenuItem.Text = "Аккаунт";
+            // 
+            // выходИзАккаунтаToolStripMenuItem
+            // 
+            this.выходИзАккаунтаToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.LogOut;
+            this.выходИзАккаунтаToolStripMenuItem.Name = "выходИзАккаунтаToolStripMenuItem";
+            this.выходИзАккаунтаToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.выходИзАккаунтаToolStripMenuItem.Text = "Выйти";
+            this.выходИзАккаунтаToolStripMenuItem.Click += new System.EventHandler(this.выходИзАккаунтаToolStripMenuItem_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,8 +261,9 @@
             this.Controls.Add(this.groupBoxBuy);
             this.Controls.Add(this.groupBoxTitle);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPanel";
             this.Text = "Панель администратора";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanel_FormClosed);

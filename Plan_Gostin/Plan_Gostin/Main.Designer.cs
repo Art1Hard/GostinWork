@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.groupBoxTitle = new System.Windows.Forms.GroupBox();
             this.labelTitle1 = new System.Windows.Forms.Label();
             this.labelTitle2 = new System.Windows.Forms.Label();
@@ -37,9 +38,6 @@
             this.labelAvtTitle2 = new System.Windows.Forms.Label();
             this.labelAvtTitle1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.войтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxReservation = new System.Windows.Forms.GroupBox();
             this.buttonReservation = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +47,9 @@
             this.buttonRelation = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelRelationTitle = new System.Windows.Forms.Label();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.войтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxTitle.SuspendLayout();
             this.groupBoxAvtorization.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -166,31 +167,9 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(671, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(671, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.войтиToolStripMenuItem});
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.выходToolStripMenuItem.Text = "Аккаунт";
-            // 
-            // войтиToolStripMenuItem
-            // 
-            this.войтиToolStripMenuItem.Name = "войтиToolStripMenuItem";
-            this.войтиToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.войтиToolStripMenuItem.Text = "Войти";
-            this.войтиToolStripMenuItem.Click += new System.EventHandler(this.войтиToolStripMenuItem_Click);
-            // 
-            // выходToolStripMenuItem1
-            // 
-            this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
-            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(54, 20);
-            this.выходToolStripMenuItem1.Text = "Выход";
-            this.выходToolStripMenuItem1.Click += new System.EventHandler(this.выходToolStripMenuItem1_Click);
             // 
             // groupBoxReservation
             // 
@@ -306,6 +285,31 @@
             this.labelRelationTitle.Text = "Для покупки брони \r\nсвяжитесь с администратором по кнопке ниже";
             this.labelRelationTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.войтиToolStripMenuItem});
+            this.выходToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.account_avatar_face_man_people_profile_user_icon_123197;
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.выходToolStripMenuItem.Text = "Аккаунт";
+            // 
+            // войтиToolStripMenuItem
+            // 
+            this.войтиToolStripMenuItem.Image = global::Plan_Gostin.Properties.Resources.Sign;
+            this.войтиToolStripMenuItem.Name = "войтиToolStripMenuItem";
+            this.войтиToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.войтиToolStripMenuItem.Text = "Войти";
+            this.войтиToolStripMenuItem.Click += new System.EventHandler(this.войтиToolStripMenuItem_Click);
+            // 
+            // выходToolStripMenuItem1
+            // 
+            this.выходToolStripMenuItem1.Image = global::Plan_Gostin.Properties.Resources.exit;
+            this.выходToolStripMenuItem1.Name = "выходToolStripMenuItem1";
+            this.выходToolStripMenuItem1.Size = new System.Drawing.Size(74, 24);
+            this.выходToolStripMenuItem1.Text = "Выход";
+            this.выходToolStripMenuItem1.Click += new System.EventHandler(this.выходToolStripMenuItem1_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +320,7 @@
             this.Controls.Add(this.groupBoxAvtorization);
             this.Controls.Add(this.groupBoxTitle);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);

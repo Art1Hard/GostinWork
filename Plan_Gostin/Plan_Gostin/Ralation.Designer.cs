@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ralation));
             this.groupBoxAvtorization = new System.Windows.Forms.GroupBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
@@ -44,9 +45,9 @@
             this.groupBoxAvtorization.Controls.Add(this.labelPhone);
             this.groupBoxAvtorization.Controls.Add(this.textBoxEmail);
             this.groupBoxAvtorization.Location = new System.Drawing.Point(9, 10);
-            this.groupBoxAvtorization.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAvtorization.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAvtorization.Name = "groupBoxAvtorization";
-            this.groupBoxAvtorization.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxAvtorization.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxAvtorization.Size = new System.Drawing.Size(376, 88);
             this.groupBoxAvtorization.TabIndex = 1;
             this.groupBoxAvtorization.TabStop = false;
@@ -66,7 +67,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(118, 23);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.ReadOnly = true;
             this.textBoxPhone.Size = new System.Drawing.Size(233, 20);
@@ -88,7 +89,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(118, 53);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.ReadOnly = true;
             this.textBoxEmail.Size = new System.Drawing.Size(233, 20);
@@ -101,7 +102,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 110);
             this.Controls.Add(this.groupBoxAvtorization);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ralation";
             this.Text = "Связь";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ralation_KeyDown);
